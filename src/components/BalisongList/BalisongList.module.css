@@ -2,13 +2,15 @@
     max-width: 2000px;
     margin: 0 auto;
     padding: 24px;
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
 
 .card {
+    max-width: 320px;
+    width: 100%;
     background: #1d1f1f;
     color: #c3e1f1;
 

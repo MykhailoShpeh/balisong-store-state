@@ -10,7 +10,10 @@ import balisong from '@/json/balisong.json';
 
 import liveblade from '@/json/liveblade.json';
 
-import css from './App.module.css'
+import css from './App.module.css';
+
+import { Filter } from '@/components/Filter/Filter.jsx'
+
 
 export class App extends Component {
 
@@ -40,7 +43,8 @@ liveBladeFiltration = () => {
   return(
     // <div className={css.section}>
     <>
-      <div className={css.filterBox}>
+      {/*//!  Filter */}
+      {/* <div className={css.filterBox}>
         <button
           className={css.buttonAllFiltration}
           type="button"
@@ -64,7 +68,13 @@ liveBladeFiltration = () => {
         >
           з небезпечним лезом
         </button>
-        </div>
+        </div> */}
+      {/* //! */}
+      <Filter
+        onAll={this.allFiltration}
+        onSafeBlade={this.safeBladeFiltration}
+        onLiveBlade={this.liveBladeFiltration}
+      />
       <Section isOn={this.state.isSafeBlade} title="Колекція балісонгів safe blade">
         <BalisongList items={balisong} />
       </Section>
