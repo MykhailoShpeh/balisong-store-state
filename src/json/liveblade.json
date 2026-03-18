@@ -1,0 +1,72 @@
+[
+    {
+        "nameOfKnife": "Tsunami Zirblast",
+        "brand": "Squid Industries",
+        "price": "$750 USD",
+        "typeOfKnife": "live blade",
+        "image": "/balisong-store-state/zirblast-tsunami.webp",
+        "materials": [
+            "6AL-4V titanium,",
+            "CPM S35-VN"
+        ],
+        "link": "https://squidindustriesknives.co/products/zirblast-tsunami",
+        "weight": "About 113 g",
+        "accessories": "stainless steel hardware kit, repair part"
+    },
+    {
+        "nameOfKnife": "Canyon-Stainless Steel Trainer with False Edge",
+        "brand": "nabalis",
+        "price": "$50 USD",
+        "typeOfKnife": "live blade",
+        "image": "/balisong-store-state/canyon.webp",
+        "materials": [
+            "420 Stainless Steel"
+        ],
+        "link": "https://nabalis.com/products/nabalis-canyon-ss-balisong-butterfly-knife-with-false-edge?_pos=1&_sid=43af6df6c&_ss=r",
+        "weight": "About 126 g",
+        "accessories": "new style box and spare hardware kit {2 bushings; 2 pairs of pivot screws; 4 washers; 1 torx screwdriver bit}"
+    },
+    {
+        "nameOfKnife": "Apocalypse Vixen Clone false edge",
+        "brand": "bbks",
+        "price": "$60 USD",
+        "typeOfKnife": "live blade",
+        "image": "/balisong-store-state/apocalypse-vixen.webp",
+        "materials": [
+            "7075 Aluminum handles,",
+            "stainless steel"
+        ],
+        "link": "https://bbksbalisong.com/products/apocalypse-vixen-v2-balisong-clone-7075-aluminum-handle-false-edge",
+        "weight": "About 100 g",
+        "accessories": "Repair kit"
+    },
+    {
+        "nameOfKnife": "Yuppie Telesto Balisong Clone False Edge",
+        "brand": "bbks",
+        "price": "$123 USD",
+        "typeOfKnife": "live blade",
+        "image": "/balisong-store-state/yuppie.webp",
+        "materials": [
+            "Titanium handles,",
+            "5Cr16 steel"
+        ],
+        "link": "https://bbksbalisong.com/products/yuppie-telesto-clone",
+        "weight": "About 135 g",
+        "accessories": "Repair kit"
+    },
+    {
+        "nameOfKnife": "Etched Titanium Krake Raken Tanto",
+        "brand": "Squid Industries",
+        "price": "$470 USD",
+        "typeOfKnife": "live blade",
+        "image": "/balisong-store-state/krake-tanto.webp",
+        "materials": [
+            "6AL-4V Handles,",
+            "titanium,",
+            "7075 Aluminum"
+        ],
+        "link": "https://squidindustriesknives.co/products/etched-titanium-krake-raken-tanto",
+        "weight": "About 118 g",
+        "accessories": "Repair kit"
+    }
+]

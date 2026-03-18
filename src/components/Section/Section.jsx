@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './Section.module.css';
 
-export function Section({ title, children }) {
+export function Section({ isOn, title, children }) {
     return (
-        <section>
+        isOn && <section>
             {/* <h2>{title}</h2> */}
             {/* //! Рендер за умовою: */}
             {title && <h2 className={css.title}>{title}</h2>}
