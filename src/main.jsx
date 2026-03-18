@@ -6,7 +6,7 @@ import {App} from '@/components/App/App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/balisong-store">
+    <BrowserRouter basename="/balisong-store-state">
       <App />
     </BrowserRouter>
   </StrictMode >

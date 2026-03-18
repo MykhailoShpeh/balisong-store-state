@@ -4,7 +4,7 @@
         "brand": "ARMED SHARK",
         "price": "$218 USD",
         "typeOfKnife": "trainer",
-        "image": "/balisong-store/1.png",
+        "image": "/balisong-store-state/1.png",
         "materials": [
             "440C Steel,",
             "Titanium"
@@ -18,7 +18,7 @@
         "brand": "Balisong Butterfly Knife Store",
         "price": "$25 USD",
         "typeOfKnife": "trainer",
-        "image": "/balisong-store/2.png",
+        "image": "/balisong-store-state/2.png",
         "materials": [
             "6061 Aluminium"
         ],
@@ -31,7 +31,7 @@
         "brand": "Squid Industries",
         "price": "$50 USD",
         "typeOfKnife": "trainer",
-        "image": "/balisong-store/3.png",
+        "image": "/balisong-store-state/3.png",
         "materials": [
             "CPVC (Plastic)"
         ],
@@ -44,7 +44,7 @@
         "brand": "Squid Industries",
         "price": "$875 USD",
         "typeOfKnife": "trainer",
-        "image": "/balisong-store/Full_DLC_Tsunami.webp",
+        "image": "/balisong-store-state/Full_DLC_Tsunami.webp",
         "materials": [
             "Titanium"
         ],
@@ -57,7 +57,7 @@
         "brand": "NABALIS",
         "price": "$120 USD",
         "typeOfKnife": "trainer",
-        "image": "/balisong-store/hydra.webp",
+        "image": "/balisong-store-state/hydra.webp",
         "materials": [
             "7075 Aluminum,",
             "440C Steel"
@@ -71,7 +71,7 @@
         "brand": "Glidr",
         "price": "$135 USD",
         "typeOfKnife": "trainer",
-        "image": "/balisong-store/glidr-moab.webp",
+        "image": "/balisong-store-state/glidr-moab.webp",
         "materials": [
             "7075 Aluminum,",
             "Hardened 420 stainless steel"

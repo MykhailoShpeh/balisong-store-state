@@ -1,12 +1,12 @@
 {
-  "name": "balisong-store",
-  "homepage": "https://MykhailoShpeh.github.io/balisong-store",
+  "name": "balisong-store-state",
+  "homepage": "https://MykhailoShpeh.github.io/balisong-store-state",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/balisong-store/",
+    "build": "vite build --base=/balisong-store-state/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
