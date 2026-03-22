@@ -1,10 +1,12 @@
+import css from './Filter.module.css'
+
 export function Filter({ onAll, onSafeBlade, onLiveBlade }) {
 return (
     <div
-        // className={css.filterBox}
+        className={css.filterBox}
     >
         <button
-            // className={css.buttonAllFiltration}
+            className={css.buttonFiltration}
             type="button"
             onClick={onAll}
         >
@@ -12,7 +14,7 @@ return (
         </button>
 
         <button
-            // className={css.buttonFiltration}
+            className={css.buttonFiltration}
             type="button"
             onClick={onSafeBlade}
         >
@@ -20,7 +22,7 @@ return (
         </button>
 
         <button
-            // className={css.buttonFiltration}
+            className={css.buttonFiltration}
             type="button"
             onClick={onLiveBlade}
         >

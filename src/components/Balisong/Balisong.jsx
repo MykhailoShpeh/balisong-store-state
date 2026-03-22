@@ -29,15 +29,14 @@ export function Balisong({
     link,
     weight,
     accessories }) {
-    return<>
-        <h2><FiTag /> Ім'я: {nameOfKnife}</h2>
-        <p><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
-        <p><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price}</p>
-        <p><GiButterflyKnife size={iconSize.sm} /> Тип: {typeOfKnife}</p>
-        <img src={image} alt={nameOfKnife} />
-        <p><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
-        <a target='_blank' rel="noopener noreferrer" href={link}>Посилання на ніж</a>
-        <p><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
+    return <>
+        <h2 className={css.title}><FiTag /> Ім'я: {nameOfKnife}</h2>
+        <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
+        <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
+        <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
+        <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price}</p>
+        <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
+        <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
         <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
     </>
 }

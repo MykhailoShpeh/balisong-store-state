@@ -1,7 +1,7 @@
 .list {
     max-width: 2000px;
     margin: 0 auto;
-    padding: 24px;
+    /* padding: 24px; */
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
