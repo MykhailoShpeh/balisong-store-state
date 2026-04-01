@@ -13,10 +13,10 @@
         "weight": "About 123 g",
         "accessories": "Practice trainer, Repair kit, Pouch, Presentation box, Flipping tutorial",
         "photos": [
-            "",
-            "",
-            "",
-            ""
+            "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr.webp",
+            "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr-2.webp",
+            "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr-3.webp",
+            "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr-4.webp"
         ]
     },
     {
@@ -30,7 +30,13 @@
         ],
         "link": "https://www.aliexpress.com/item/1005006755743121.html?spm=a2g0o.order_list.order_list_main.5.92a31802Pv2kVs",
         "weight": "About 110 g",
-        "accessories": "Repair kit, Pouch"
+        "accessories": "Repair kit, Pouch",
+        "photos": [
+            "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer1.avif",
+            "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer2.avif",
+            "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer3.avif",
+            "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer4.png"
+        ]
     },
     {
         "nameOfKnife": "Squiddy",
@@ -43,20 +49,13 @@
         ],
         "link": "http://squidindustries.co/products/squiddy",
         "weight": "About 70.8 g",
-        "accessories": false
-    },
-    {
-        "nameOfKnife": "Matte DLC Tsunami",
-        "brand": "Squid Industries",
-        "price": "$875 USD",
-        "typeOfKnife": "trainer",
-        "image": "/balisong-store-state/Full_DLC_Tsunami.webp",
-        "materials": [
-            "Titanium"
-        ],
-        "link": "https://squidindustriesknives.co/products/dlc-tsunami",
-        "weight": "About 113 g",
-        "accessories": "Practice trainer, Repair kit, Pouch, Presentation box, Flipping tutorial"
+        "accessories": false,
+        "photos": [
+            "/balisong-store-state/3.png",
+            "/balisong-store-state/photos/squiddy/squiddy.webp",
+            "/balisong-store-state/photos/squiddy/squiddy-2.webp",
+            "/balisong-store-state/photos/squiddy/squiddy-3.webp"
+        ]
     },
     {
         "nameOfKnife": "Hydra Trainer",
@@ -70,7 +69,13 @@
         ],
         "link": "https://nabalis.com/products/nabalils-hydra-butterfly-knife-balisong-trainer-japenese-tanto-bowie-blade-7075aluminum?variant=45579585159318",
         "weight": "About 115 g",
-        "accessories": "ghost stand"
+        "accessories": "ghost stand",
+        "photos": [
+            "/balisong-store-state/photos/hydra/hydra-trainer.webp",
+            "/balisong-store-state/photos/hydra/hydra-2.webp",
+            "/balisong-store-state/photos/hydra/hydra-3.webp",
+            "/balisong-store-state/photos/hydra/hydra-4.webp"
+        ]
     },
     {
         "nameOfKnife": "Moab x Meridian - Purple Rain",
@@ -84,7 +89,13 @@
         ],
         "link": "https://glidr.co/collections/moab-x-meridian/products/moab-x-meridian-purple-rain",
         "weight": "About 114 g",
-        "accessories": "Secondary parts"
+        "accessories": "Secondary parts",
+        "photos": [
+            "/balisong-store-state/photos/moab-meridian/moab-meridian.webp",
+            "/balisong-store-state/photos/moab-meridian/moab-meridian-3.webp",
+            "/balisong-store-state/photos/moab-meridian/moab-meridian-4.webp",
+            "/balisong-store-state/glidr-moab.webp"
+        ]
     },
     {
         "nameOfKnife": "Tsunami Zirblast",
@@ -98,7 +109,13 @@
         ],
         "link": "https://squidindustriesknives.co/products/zirblast-tsunami",
         "weight": "About 113 g",
-        "accessories": "stainless steel hardware kit, repair part"
+        "accessories": "stainless steel hardware kit, repair part",
+        "photos": [
+            "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast.webp",
+            "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast-2.webp",
+            "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast-3.avif",
+            "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast-4.webp"
+        ]
     },
     {
         "nameOfKnife": "Canyon-Stainless Steel Trainer with False Edge",
@@ -111,7 +128,13 @@
         ],
         "link": "https://nabalis.com/products/nabalis-canyon-ss-balisong-butterfly-knife-with-false-edge?_pos=1&_sid=43af6df6c&_ss=r",
         "weight": "About 126 g",
-        "accessories": "new style box and spare hardware kit {2 bushings; 2 pairs of pivot screws; 4 washers; 1 torx screwdriver bit}"
+        "accessories": "new style box and spare hardware kit {2 bushings; 2 pairs of pivot screws; 4 washers; 1 torx screwdriver bit}",
+        "photos": [
+            "/balisong-store-state/photos/canyon/canyon.webp",
+            "/balisong-store-state/photos/canyon/canyon-2.webp",
+            "/balisong-store-state/photos/canyon/canyon-3.webp",
+            "/balisong-store-state/photos/canyon/canyon-4.webp"
+        ]
     },
     {
         "nameOfKnife": "Apocalypse Vixen Clone false edge",
@@ -125,7 +148,8 @@
         ],
         "link": "https://bbksbalisong.com/products/apocalypse-vixen-v2-balisong-clone-7075-aluminum-handle-false-edge",
         "weight": "About 100 g",
-        "accessories": "Repair kit"
+        "accessories": "Repair kit",
+        "photos": []
     },
     {
         "nameOfKnife": "Yuppie Telesto Balisong Clone False Edge",
@@ -139,7 +163,13 @@
         ],
         "link": "https://bbksbalisong.com/products/yuppie-telesto-clone",
         "weight": "About 135 g",
-        "accessories": "Repair kit"
+        "accessories": "Repair kit",
+        "photos": [
+            "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto.webp",
+            "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto-2.webp",
+            "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto-3.webp",
+            "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto-4.jpg"
+        ]
     },
     {
         "nameOfKnife": "Etched Titanium Krake Raken Tanto",
@@ -154,6 +184,12 @@
         ],
         "link": "https://squidindustriesknives.co/products/etched-titanium-krake-raken-tanto",
         "weight": "About 118 g",
-        "accessories": "Repair kit"
+        "accessories": "Repair kit",
+        "photos": [
+            "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken.avif",
+            "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken-2.avif",
+            "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken-3.avif",
+            "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken-4.webp"
+        ]
     }
 ]

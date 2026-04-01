@@ -28,7 +28,9 @@ export function Balisong({
     materials,
     link,
     weight,
-    accessories }) {
+    accessories,
+    additionalPhotos
+}) {
     return <>
         <h2 className={css.title}><FiTag /> Ім'я: {nameOfKnife}</h2>
         <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
@@ -38,5 +40,15 @@ export function Balisong({
         <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
         <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
         <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
+        
+        <div className={css.divImg}>
+            {additionalPhotos.map(item =>
+                <img
+                    src={item}
+                    alt={nameOfKnife}
+                    className={css.img}
+                />
+            )}
+        </div>
     </>
 }

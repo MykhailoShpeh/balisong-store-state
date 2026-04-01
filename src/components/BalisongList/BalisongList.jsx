@@ -22,6 +22,7 @@ export function BalisongList({ items }) {
                             link={item.link}
                             weight={item.weight}
                             accessories={item.accessories}
+                            additionalPhotos={item.photos}
                         />
                     </li>
                 )}
