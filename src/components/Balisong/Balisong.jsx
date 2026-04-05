@@ -1,5 +1,7 @@
 import css from './Balisong.module.css';
 
+import {Modal} from "@/components/Modal/Modal.jsx"
+
 //! Ім'я ножа
 import { FiTag } from "react-icons/fi";
 //! Марка
@@ -40,8 +42,8 @@ export function Balisong({
         <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
         <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
         <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
-        
-        <div className={css.divImg}>
+
+        {/* <div className={css.divImg}>
             {additionalPhotos.map(item =>
                 <img
                     src={item}
@@ -49,6 +51,11 @@ export function Balisong({
                     className={css.img}
                 />
             )}
-        </div>
+        </div> */}
+
+        <Modal
+            images={additionalPhotos}
+            name={nameOfKnife}
+        />
     </>
 }
