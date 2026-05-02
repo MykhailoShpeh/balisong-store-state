@@ -26,7 +26,8 @@ state = {
   title: 'Колекція балісонгів',
   //! Властивості для кошика
   activeButtonIndex: null,
-  selectedKnifesIndxs: [] //! масив індексів обраних ножів
+  selectedKnifesIndxs: [], //! масив індексів обраних ножів
+  selectedKnifesObjects: [] //! //! масив обраних моделей
 }
 
 allFiltration = () => {
@@ -64,7 +65,7 @@ liveBladeFiltration = () => {
     // const cartArray = balisongs.filter(item => item.typeOfKnife === "live blade")
     // console.log("cartArray: ", cartArray);
     this.setState({
-      // balisongsArray: cartArray,
+      balisongsArray: this.state.selectedKnifesObjects,
       title: 'Кошик'
     });
   };
@@ -97,6 +98,20 @@ liveBladeFiltration = () => {
       });
     }
 
+    this.selectedKnifesObjects()
+
+  }
+
+  //! Формуємо(оновлюємо) масив обраних моделей [selectedModels]
+
+  selectedKnifesObjects = () => {
+    console.log("Функція selectedKnifesObjects")
+
+    this.setState(
+      prevState =>
+      ({
+        selectedKnifesObjects: prevState.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
+      }))
   }
   
   
@@ -104,11 +119,12 @@ liveBladeFiltration = () => {
 
     const {
       selectedKnifesIndxs,
-
+      selectedKnifesObjects
 
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
+    console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     
   return(
     <>
