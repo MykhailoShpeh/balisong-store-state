@@ -37,7 +37,7 @@ export class Modal extends Component {
     };
 
     render() {
-        console.log("this.props: ", this.props)
+        // console.log("this.props: ", this.props)
         const { images, name } = this.props
         const { open, index } = this.state;
 
@@ -62,7 +62,7 @@ export class Modal extends Component {
         //     // ],
         // }));
 
-        console.log("images: ", images)
+        // console.log("images: ", images)
         return (
             <div
                 className={css.divImg}>

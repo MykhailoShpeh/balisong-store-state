@@ -22,6 +22,8 @@ import { iconSize } from '@/constants/iconSize.js'
 // import { Card } from './Balisong.styled.jsx'
 
 export function Balisong({
+    id,
+    index,
     nameOfKnife,
     brand,
     price,
@@ -31,7 +33,8 @@ export function Balisong({
     link,
     weight,
     accessories,
-    additionalPhotos
+    additionalPhotos,
+    onActive
 }) {
     return <>
         <h2 className={css.title}><FiTag /> Ім'я: {nameOfKnife}</h2>
@@ -57,5 +60,12 @@ export function Balisong({
             images={additionalPhotos}
             name={nameOfKnife}
         />
+
+        <button
+            type='button'
+            onClick={() => { onActive(id) }}
+        >
+            Додати до кошика
+        </button>
     </>
 }

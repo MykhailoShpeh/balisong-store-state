@@ -1,5 +1,6 @@
 [
     {
+        "id": "001",
         "nameOfKnife": "CK-SR Balisong Trainer",
         "brand": "ARMED SHARK",
         "price": "$218 USD",
@@ -19,7 +20,8 @@
             "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr-4.webp"
         ]
     },
-    {
+    {   
+        "id": "002",
         "nameOfKnife": "TOUCH TIMES Kraken V3 Trainer Clone",
         "brand": "Balisong Butterfly Knife Store",
         "price": "$25 USD",
@@ -39,6 +41,7 @@
         ]
     },
     {
+        "id": "003",
         "nameOfKnife": "Squiddy",
         "brand": "Squid Industries",
         "price": "$50 USD",
@@ -58,6 +61,7 @@
         ]
     },
     {
+        "id": "004",
         "nameOfKnife": "Hydra Trainer",
         "brand": "NABALIS",
         "price": "$120 USD",
@@ -78,6 +82,7 @@
         ]
     },
     {
+        "id": "005",
         "nameOfKnife": "Moab x Meridian - Purple Rain",
         "brand": "Glidr",
         "price": "$135 USD",
@@ -98,6 +103,7 @@
         ]
     },
     {
+        "id": "006",
         "nameOfKnife": "Tsunami Zirblast",
         "brand": "Squid Industries",
         "price": "$750 USD",
@@ -118,6 +124,7 @@
         ]
     },
     {
+        "id": "007",
         "nameOfKnife": "Canyon-Stainless Steel Trainer with False Edge",
         "brand": "nabalis",
         "price": "$50 USD",
@@ -137,6 +144,7 @@
         ]
     },
     {
+        "id": "008",
         "nameOfKnife": "Apocalypse Vixen Clone false edge",
         "brand": "bbks",
         "price": "$60 USD",
@@ -152,6 +160,7 @@
         "photos": []
     },
     {
+        "id": "009",
         "nameOfKnife": "Yuppie Telesto Balisong Clone False Edge",
         "brand": "bbks",
         "price": "$123 USD",
@@ -172,6 +181,7 @@
         ]
     },
     {
+        "id": "010",
         "nameOfKnife": "Etched Titanium Krake Raken Tanto",
         "brand": "Squid Industries",
         "price": "$470 USD",

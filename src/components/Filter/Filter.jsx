@@ -1,6 +1,6 @@
 import css from './Filter.module.css'
 
-export function Filter({ onAll, onSafeBlade, onLiveBlade }) {
+export function Filter({ onAll, onSafeBlade, onLiveBlade, onCart }) {
 return (
     <div
         className={css.filterBox}
@@ -27,6 +27,14 @@ return (
             onClick={onLiveBlade}
         >
             з небезпечним лезом
+        </button>
+
+        <button
+            className={css.buttonFiltration}
+            type="button"
+            onClick={onCart}
+        >
+            кошик
         </button>
     </div>
 )

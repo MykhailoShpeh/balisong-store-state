@@ -6,13 +6,15 @@ import css from './BalisongList.module.css';
 
 import {List, Card} from './BalisongList.styled.jsx'
 
-export function BalisongList({ items }) {
+export function BalisongList({ items, onActive }) {
     return (
         <ul className={css.list}>
             {items.map
-                (item =>
+                ((item, index) =>
                     <li className={css.card} key={item.id}>
                         <Balisong
+                            id={item.id}
+                            index={index}
                             nameOfKnife={item.nameOfKnife}
                             brand={item.brand}
                             price={item.price}
@@ -23,6 +25,7 @@ export function BalisongList({ items }) {
                             weight={item.weight}
                             accessories={item.accessories}
                             additionalPhotos={item.photos}
+                            onActive={onActive}
                         />
                     </li>
                 )}

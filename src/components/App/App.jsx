@@ -23,15 +23,16 @@ state = {
   // isSafeBlade: false,
   // isLiveBlade: false
   balisongsArray: balisongs,
-  title: 'Колекція балісонгів'
+  title: 'Колекція балісонгів',
+  //! Властивості для кошика
+  activeButtonIndex: null,
+  selectedKnifesIndxs: [] //! масив індексів обраних ножів
 }
 
 allFiltration = () => {
   console.log("All")
     
   this.setState({
-    // isSafeBlade: true,
-    // isLiveBlade: true,
     balisongsArray: balisongs,
     title: 'Колекція балісонгів'
   });
@@ -43,8 +44,6 @@ safeBladeFiltration = () => {
   const safeBladeArray = balisongs.filter(item => item.typeOfKnife === "trainer")
   console.log("safeBladeArray: ", safeBladeArray);
   this.setState({
-    // isSafeBlade: true,
-    // isLiveBlade: false
     balisongsArray: safeBladeArray,
     title: 'Колекція trainer балісонгів'
   });
@@ -55,60 +54,74 @@ liveBladeFiltration = () => {
   const liveBladeArray = balisongs.filter(item => item.typeOfKnife === "live blade")
   console.log("liveBladeArray: ", liveBladeArray);
   this.setState({
-    // isSafeBlade: false,
-    // isLiveBlade: true
     balisongsArray: liveBladeArray,
     title: 'Колекція live blade балісонгів'
   });
 };
+  
+  cartFiltration = () => {
+    console.log("Live blade")
+    // const cartArray = balisongs.filter(item => item.typeOfKnife === "live blade")
+    // console.log("cartArray: ", cartArray);
+    this.setState({
+      // balisongsArray: cartArray,
+      title: 'Кошик'
+    });
+  };
+
+  ActiveButton = (id) => {
+    console.log("id: ", id)
+
+    this.setState({
+      activeButtonIndex: id,
+    })
+
+    if (this.state.selectedKnifesIndxs.includes(id)) {
+      console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
+
+      //! не = this.state.selectedKnifesIndxs, а = [...this.state.selectedKnifesIndxs], бо при 1 варіанті ми даємо посилання замість копії, це зламає роботу state
+      const idArray = [...this.state.selectedKnifesIndxs]
+
+      //! index - 1 замість newselectedKnifesIndxs.indexOf(index) не працює!
+      idArray.splice(idArray.indexOf(id), 1);
+      this.setState({
+        selectedKnifesIndxs: idArray
+      })
+    }
+    else {
+      console.log("Такого індекса ще немає,тоді ДОДАЄМО його!✅");
+
+      this.setState({
+        // activeButtonIndex: index,
+        selectedKnifesIndxs: [...this.state.selectedKnifesIndxs, id].sort((a, b) => a - b)
+      });
+    }
+
+  }
+  
+  
   render( ) {
-// export function App() {
+
+    const {
+      selectedKnifesIndxs,
+
+
+    } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
+
+    console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
+    
   return(
-    // <div className={css.section}>
     <>
-      {/*//!  Filter */}
-      {/* <div className={css.filterBox}>
-        <button
-          className={css.buttonAllFiltration}
-          type="button"
-          onClick={this.allFiltration}
-        >
-          ВСІ
-        </button>
-
-        <button
-          className={css.buttonFiltration}
-          type="button"
-          onClick={this.safeBladeFiltration}
-        >
-          з тренувальним лезом
-        </button>
-
-        <button
-          className={css.buttonFiltration}
-          type="button"
-          onClick={this.liveBladeFiltration}
-        >
-          з небезпечним лезом
-        </button>
-        </div> */}
-      {/* //! */}
       <Filter
         onAll={this.allFiltration}
         onSafeBlade={this.safeBladeFiltration}
         onLiveBlade={this.liveBladeFiltration}
+        onCart={this.cartFiltration}
       />
-      {/* <Section isOn={this.state.isSafeBlade} title="Колекція балісонгів safe blade">
-        <BalisongList items={balisong} />
-      </Section>
-      <Section isOn={this.state.isLiveBlade} title="Колекція балісонгів live blade">
-        <BalisongList items={liveblade} />
-      </Section> */}
       <Section title={this.state.title}>
-        <BalisongList items={this.state.balisongsArray} />
+        <BalisongList items={this.state.balisongsArray} onActive={this.ActiveButton} />
       </Section>
     </>
-    // </div>
   )
 }
 }
