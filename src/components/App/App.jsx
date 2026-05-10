@@ -27,7 +27,8 @@ state = {
   //! Властивості для кошика
   activeButtonIndex: null,
   selectedKnifesIndxs: [], //! масив індексів обраних ножів
-  selectedKnifesObjects: [] //! //! масив обраних моделей
+  selectedKnifesObjects: [], //! //! масив обраних моделей
+  isCartButton: false
 }
 
 allFiltration = () => {
@@ -35,7 +36,8 @@ allFiltration = () => {
     
   this.setState({
     balisongsArray: balisongs,
-    title: 'Колекція балісонгів'
+    title: 'Колекція балісонгів',
+    isCartButton: false,
   });
 
 };
@@ -46,7 +48,8 @@ safeBladeFiltration = () => {
   console.log("safeBladeArray: ", safeBladeArray);
   this.setState({
     balisongsArray: safeBladeArray,
-    title: 'Колекція trainer балісонгів'
+    title: 'Колекція trainer балісонгів',
+    isCartButton: false,
   });
 };
 
@@ -56,7 +59,8 @@ liveBladeFiltration = () => {
   console.log("liveBladeArray: ", liveBladeArray);
   this.setState({
     balisongsArray: liveBladeArray,
-    title: 'Колекція live blade балісонгів'
+    title: 'Колекція live blade балісонгів',
+    isCartButton: false,
   });
 };
   
@@ -66,16 +70,17 @@ liveBladeFiltration = () => {
     // console.log("cartArray: ", cartArray);
     this.setState({
       balisongsArray: this.state.selectedKnifesObjects,
-      title: 'Кошик'
+      title: 'Кошик',
+      isCartButton: true,
     });
   };
 
   ActiveButton = (id) => {
     console.log("id: ", id)
 
-    this.setState({
-      activeButtonIndex: id,
-    })
+    // this.setState({
+    //   activeButtonIndex: id,
+    // })
 
     if (this.state.selectedKnifesIndxs.includes(id)) {
       console.log("Такий індекс вже є,тоді ВИДАЛЯЄМО його!❌");
@@ -112,6 +117,8 @@ liveBladeFiltration = () => {
       ({
         selectedKnifesObjects: prevState.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
       }))
+
+    // return this.state.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
   }
   
   
@@ -119,7 +126,9 @@ liveBladeFiltration = () => {
 
     const {
       selectedKnifesIndxs,
-      selectedKnifesObjects
+      selectedKnifesObjects,
+      balisongsArray,
+      isCartButton
 
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
@@ -133,9 +142,14 @@ liveBladeFiltration = () => {
         onSafeBlade={this.safeBladeFiltration}
         onLiveBlade={this.liveBladeFiltration}
         onCart={this.cartFiltration}
+        selectedLength={selectedKnifesObjects.length}
       />
       <Section title={this.state.title}>
-        <BalisongList items={this.state.balisongsArray} onActive={this.ActiveButton} />
+        <BalisongList
+          items={isCartButton ? selectedKnifesObjects : balisongsArray}
+          onActive={this.ActiveButton}
+          selectedKnifesIndxs={selectedKnifesIndxs}
+        />
       </Section>
     </>
   )

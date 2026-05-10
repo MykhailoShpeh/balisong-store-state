@@ -23,7 +23,6 @@ import { iconSize } from '@/constants/iconSize.js'
 
 export function Balisong({
     id,
-    index,
     nameOfKnife,
     brand,
     price,
@@ -34,8 +33,11 @@ export function Balisong({
     weight,
     accessories,
     additionalPhotos,
-    onActive
+    onActive,
+    selectedKnifesIndxs
 }) {
+    // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
+    // console.log("id :", id)
     return <>
         <h2 className={css.title}><FiTag /> Ім'я: {nameOfKnife}</h2>
         <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
@@ -65,7 +67,9 @@ export function Balisong({
             type='button'
             onClick={() => { onActive(id) }}
         >
-            Додати до кошика
+            {selectedKnifesIndxs.includes(id)
+                ? "Видалити із кошика" : "Додати до кошика"
+            }
         </button>
     </>
 }

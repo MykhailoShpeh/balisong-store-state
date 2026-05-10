@@ -1,6 +1,6 @@
 import css from './Filter.module.css'
 
-export function Filter({ onAll, onSafeBlade, onLiveBlade, onCart }) {
+export function Filter({ onAll, onSafeBlade, onLiveBlade, onCart, selectedLength }) {
 return (
     <div
         className={css.filterBox}
@@ -35,6 +35,10 @@ return (
             onClick={onCart}
         >
             кошик
+            &nbsp;
+            <span
+                // className={css.cartSpan}
+            >{null ? 0 : selectedLength}</span>
         </button>
     </div>
 )
