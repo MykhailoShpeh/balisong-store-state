@@ -1,6 +1,8 @@
 import css from './Balisong.module.css';
 
-import {Modal} from "@/components/Modal/Modal.jsx"
+import { Modal } from "@/components/Modal/Modal.jsx"
+
+import template from "@/components/Balisong/template-out-of-stock.jpg";
 
 //! Ім'я ножа
 import { FiTag } from "react-icons/fi";
@@ -32,7 +34,7 @@ export function Balisong({
     link,
     weight,
     accessories,
-    additionalPhotos,
+    additionalPhotos = [template],
     onActive,
     selectedKnifesIndxs
 }) {
@@ -64,6 +66,7 @@ export function Balisong({
         />
 
         <button
+            disabled={additionalPhotos[0] === template}
             type='button'
             onClick={() => { onActive(id) }}
         >
