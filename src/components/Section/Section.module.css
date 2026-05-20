@@ -1,8 +1,17 @@
-
+.nullTitle {
+    color: #a25139;
+    text-align: center;
+}
 
 .title {
     width: 250px;
     color: #bbbbee;
     margin: 0 auto;
     margin-bottom: 20px;
+}
+
+.titleTotalTypes {
+    color: #a1a1b7;
+ text-align: center;
+ margin-bottom: 40px;
 }

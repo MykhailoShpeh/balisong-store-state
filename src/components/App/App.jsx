@@ -14,7 +14,9 @@ import balisongs from '@/json/balisongs.json';
 
 import css from './App.module.css';
 
-import { Filter } from '@/components/Filter/Filter.jsx'
+import { Filter } from '@/components/Filter/Filter.jsx';
+
+import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
 
 export class App extends Component {
@@ -27,7 +29,7 @@ state = {
   //! Властивості для кошика
   activeButtonIndex: null,
   selectedKnifesIndxs: [], //! масив індексів обраних ножів
-  selectedKnifesObjects: [], //! //! масив обраних моделей
+  // selectedKnifesObjects: [], //! //! масив обраних моделей
   isCartButton: false
 }
 
@@ -103,37 +105,42 @@ liveBladeFiltration = () => {
       });
     }
 
-    this.selectedKnifesObjects()
+    // this.selectedKnifesObjects()
 
   }
 
   //! Формуємо(оновлюємо) масив обраних моделей [selectedModels]
 
-  selectedKnifesObjects = () => {
-    console.log("Функція selectedKnifesObjects")
+  // selectedKnifesObjects = () => {
+  //   console.log("Функція selectedKnifesObjects")
 
-    this.setState(
-      prevState =>
-      ({
-        selectedKnifesObjects: prevState.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
-      }))
+  //   this.setState(
+  //     prevState =>
+  //     ({
+  //       selectedKnifesObjects: prevState.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
+  //     }))
 
-    // return this.state.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
-  }
+  //   // return this.state.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
+  // }
   
   
   render( ) {
 
     const {
       selectedKnifesIndxs,
-      selectedKnifesObjects,
+      // selectedKnifesObjects,
       balisongsArray,
       isCartButton
 
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
-    console.log("selectedKnifesObjects: ", selectedKnifesObjects);
+    // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
+
+    const selectedKnifesObjects = updateSelectedModels(selectedKnifesIndxs,
+      balisongs).sort((firstModel, secondModel) => firstModel.nameOfKnife.localeCompare(secondModel.nameOfKnife));
+    
+    const totalTypes = isCartButton ? selectedKnifesObjects.length : balisongsArray.length;
     
   return(
     <>
@@ -144,7 +151,12 @@ liveBladeFiltration = () => {
         onCart={this.cartFiltration}
         selectedLength={selectedKnifesObjects.length}
       />
-      <Section title={this.state.title}>
+      <Section
+        title={this.state.title}
+        selectedKnifesObjects={selectedKnifesObjects}
+        isCartButton={this.state.isCartButton}
+        totalTypes={totalTypes}
+      >
         <BalisongList
           items={isCartButton ? selectedKnifesObjects : balisongsArray}
           onActive={this.ActiveButton}
