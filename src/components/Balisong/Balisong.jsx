@@ -41,9 +41,9 @@ export function Balisong({
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
     return <>
-        <h2 className={css.title}><FiTag /> Ім'я: {nameOfKnife}</h2>
-        <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
+        <h2 className={css.title}>  {nameOfKnife}</h2>
         <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
+        <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
         <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
         <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price}</p>
         <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
@@ -66,6 +66,7 @@ export function Balisong({
         />
 
         <button
+            cla
             disabled={additionalPhotos[0] === template}
             type='button'
             onClick={() => { onActive(id) }}

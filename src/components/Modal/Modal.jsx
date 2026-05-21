@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import css from './Modal.module.css'
+import css from './Modal.module.css';
+import template from "@/components/Balisong/template-out-of-stock.jpg";
 
 //? Бібліотека для модальних вікон: Yet Another React Lightbox
 import Lightbox from "yet-another-react-lightbox";
@@ -71,8 +72,8 @@ export class Modal extends Component {
                         key={i} //! поки що не унікальний
                         src={item}
                         alt={name}
-                        className={css.img}
-                        onClick={() => this.openLightbox(i)}
+                        className={images[0] === template ? `${css.img} ${css.outOfStock}` : css.img}
+                        onClick={images[0] === template ? null : () => this.openLightbox(i)}
 
                     />
                 )}
