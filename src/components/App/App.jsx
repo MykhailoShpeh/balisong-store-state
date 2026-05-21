@@ -18,6 +18,22 @@ import { Filter } from '@/components/Filter/Filter.jsx';
 
 import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
+// //! Сортування, в якому моделі, яких немає в наявності знаходяться в кінці списку
+// console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+const arrayYes = balisongs.filter(item => item.photos);
+
+const arrayNo = balisongs.filter(item => !item.photos);
+
+// console.log("arrayYes: ", arrayYes);
+// console.log("arrayNo: ", arrayNo);
+
+// balisongs.splice(0, balisongs.length);
+balisongs.length = 0;
+
+balisongs.push(...arrayYes, ...arrayNo)
+
+// console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
 
 export class App extends Component {
 
