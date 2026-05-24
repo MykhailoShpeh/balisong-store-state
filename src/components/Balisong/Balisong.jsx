@@ -66,7 +66,7 @@ export function Balisong({
         />
 
         <button
-            cla
+            className={css.cardButton}
             disabled={additionalPhotos[0] === template}
             type='button'
             onClick={() => { onActive(id) }}

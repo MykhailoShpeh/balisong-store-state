@@ -22,3 +22,7 @@
 .text {
     max-height: 30px;
 }
+
+.cardButton {
+    background-color: gray;
+}
