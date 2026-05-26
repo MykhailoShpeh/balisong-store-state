@@ -6,7 +6,11 @@ import css from './BalisongList.module.css';
 
 import {List, Card} from './BalisongList.styled.jsx'
 
-export function BalisongList({ items, onActive, selectedKnifesIndxs }) {
+export function BalisongList({
+    items,
+    onActive,
+    selectedKnifesIndxs,
+}) {
     return (
         <ul className={css.list}>
             {items.map

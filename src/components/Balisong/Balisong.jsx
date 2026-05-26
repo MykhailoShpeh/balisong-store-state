@@ -36,7 +36,7 @@ export function Balisong({
     accessories,
     additionalPhotos = [template],
     onActive,
-    selectedKnifesIndxs
+    selectedKnifesIndxs,
 }) {
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
@@ -45,9 +45,11 @@ export function Balisong({
         <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
         <h2
             className={css.fullInfoTitle}
-            // onClick={() => { }}
+            onClick={(event) => {
+                event.currentTarget.nextElementSibling.classList.toggle(css.active)
+            }}
         >Повна інформація</h2>
-        {/* <div className={css.fullInfoDiv}> */}
+        <div className={css.fullInfoDiv}>
         <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
         <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
         <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price}</p>
@@ -69,7 +71,7 @@ export function Balisong({
             images={additionalPhotos}
             name={nameOfKnife}
         />
-        {/* </div> */}
+        </div>
         <button
             
             className={additionalPhotos[0] === template

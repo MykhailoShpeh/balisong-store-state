@@ -9,7 +9,7 @@
 }
 
 .card {
-    /* max-width: 320px; */
+    max-width: 480px;
     /* width: 100%; */
     background: #414149;
     color: #e0e0e0;
