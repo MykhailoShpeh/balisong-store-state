@@ -1,0 +1,47 @@
+.sorter {
+    width: 100%;
+        /* position: fixed; */
+        /* top: 0;
+        z-index: 1; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: 30px;
+}
+
+.title {
+    color: rgb(230, 230, 69);
+    text-align: center;
+}
+
+.input {
+    width: 200px;
+    height: 35px;
+    color: #e0d1f3;
+    align-self: center;
+    background: transparent;
+    border: 1px solid rgb(146, 146, 42);
+    border-radius: 4px;
+    outline: none;
+}
+
+.input:focus {
+    animation: glow 2s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        border-color: #ffd500;
+        box-shadow: 0 0 5px #ffd500;
+    }
+
+    50% {
+        border-color: #9b4dff;
+        box-shadow: 0 0 12px #9b4dff;
+    }
+
+    100% {
+        border-color: #ffd500;
+        box-shadow: 0 0 5px #ffd500;
+    }
+}

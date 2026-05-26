@@ -43,6 +43,11 @@ export function Balisong({
     return <>
         <h2 className={css.title}>  {nameOfKnife}</h2>
         <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
+        <h2
+            className={css.fullInfoTitle}
+            // onClick={() => { }}
+        >Повна інформація</h2>
+        {/* <div className={css.fullInfoDiv}> */}
         <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
         <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
         <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price}</p>
@@ -64,9 +69,15 @@ export function Balisong({
             images={additionalPhotos}
             name={nameOfKnife}
         />
-
+        {/* </div> */}
         <button
-            className={css.cardButton}
+            
+            className={additionalPhotos[0] === template
+                ? `${css.noInStock} ${css.cardButton} `
+                : selectedKnifesIndxs.includes(id)
+                    ? `${css.cardButton}  ${css.deleteFromCart}`
+                    : `${css.cardButton}`
+                }
             disabled={additionalPhotos[0] === template}
             type='button'
             onClick={() => { onActive(id) }}

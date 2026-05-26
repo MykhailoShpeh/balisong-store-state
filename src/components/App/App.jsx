@@ -18,6 +18,8 @@ import { Filter } from '@/components/Filter/Filter.jsx';
 
 import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
+import {Sorter } from '@/components/Sorter/Sorter.jsx';
+
 // //! Сортування, в якому моделі, яких немає в наявності знаходяться в кінці списку
 // console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 const arrayYes = balisongs.filter(item => item.photos);
@@ -167,6 +169,7 @@ liveBladeFiltration = () => {
         onCart={this.cartFiltration}
         selectedLength={selectedKnifesObjects.length}
       />
+      <Sorter />
       <Section
         title={this.state.title}
         selectedKnifesObjects={selectedKnifesObjects}

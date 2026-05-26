@@ -19,10 +19,26 @@
     text-align: center;
 }
 
+.fullInfoTitle {
+    cursor: pointer;
+}
+
+.fullInfoDiv {
+    display: none;
+}
+
 .text {
     max-height: 30px;
 }
 
 .cardButton {
-    background-color: gray;
+    background-color: rgb(195, 218, 67);
+}
+
+.noInStock {
+    background-color: grey;
+}
+
+.deleteFromCart {
+    background-color: rgb(176, 41, 41);
 }
