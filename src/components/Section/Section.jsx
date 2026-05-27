@@ -10,7 +10,7 @@ export function Section({ isOn = true, title, children, selectedKnifesObjects, i
             {/* <h2>{title}</h2> */}
             {/* //! Рендер за умовою: */}
                     {title && <h2 className={css.title}>{title}</h2>}
-                    <h3 className={css.titleTotalTypes}>Кількість типів ЛА: <span>{totalTypes}</span></h3>
+                    <h3 className={css.titleTotalTypes}>Кількість типів ножів: <span>{totalTypes}</span></h3>
             {children}
             </section>}
         </>
