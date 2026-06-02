@@ -43,12 +43,13 @@ export function Balisong({
     return <>
         <h2 className={css.title}>  {nameOfKnife}</h2>
         <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
-        <h2
+        <button
+            type='button'
             className={css.fullInfoTitle}
             onClick={(event) => {
                 event.currentTarget.nextElementSibling.classList.toggle(css.active)
             }}
-        >Повна інформація</h2>
+        >{}Повна інформація</button>
         <div className={css.fullInfoDiv}>
         <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
         <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>

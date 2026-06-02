@@ -46,10 +46,31 @@ state = {
   title: 'Колекція балісонгів',
   //! Властивості для кошика
   activeButtonIndex: null,
-  selectedKnifesIndxs: [], //! масив індексів обраних ножів
-  // selectedKnifesObjects: [], //! //! масив обраних моделей
-  isCartButton: false
+  selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [], //! масив індексів обраних ножів
+  selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongsArray.filter((el) => item === el.id)), //! //! масив обраних моделей
+  isCartButton: false,
+  selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongsArray.filter((el) => item === el.id)),
+  balisongsArrayAfterFiltration: balisongs,
+  inputSearchValue: ""
 }
+  
+  
+  componentDidMount() {
+    const saved = localStorage.getItem("selectedKnifesIndxs");
+    if (!saved) {
+      localStorage.setItem("selectedKnifesIndxs", JSON.stringify([]));
+    }
+  };
+
+  //! 3.localStorage - Оновлення(синхронізація) localStorage при кожній зміні indicesSelectedModels
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.selectedKnifesIndxs !== this.state.selectedKnifesIndxs) {
+      localStorage.setItem(
+        "selectedKnifesIndxs",
+        JSON.stringify(this.state.selectedKnifesIndxs)
+      );
+    }
+  };
 
 allFiltration = () => {
   console.log("All")
@@ -58,6 +79,7 @@ allFiltration = () => {
     balisongsArray: balisongs,
     title: 'Колекція балісонгів',
     isCartButton: false,
+    balisongsArrayAfterFiltration: balisongs
   });
 
 };
@@ -70,6 +92,7 @@ safeBladeFiltration = () => {
     balisongsArray: safeBladeArray,
     title: 'Колекція trainer балісонгів',
     isCartButton: false,
+    balisongsArrayAfterFiltration: safeBladeArray
   });
 };
 
@@ -81,6 +104,8 @@ liveBladeFiltration = () => {
     balisongsArray: liveBladeArray,
     title: 'Колекція live blade балісонгів',
     isCartButton: false,
+    balisongsArrayAfterFiltration: liveBladeArray
+
   });
 };
   
@@ -92,6 +117,8 @@ liveBladeFiltration = () => {
       balisongsArray: this.state.selectedKnifesObjects,
       title: 'Кошик',
       isCartButton: true,
+      balisongsArrayAfterFiltration: this.state.selectedKnifesObjects
+
     });
   };
 
@@ -140,13 +167,39 @@ liveBladeFiltration = () => {
 
   //   // return this.state.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
   // }
+
+  handleChangeInputSearchValue = event => {
+    console.log("event: ", event)
+    const inputData = event.target.value;
+    let onlyInputSearchValue;
+
+    //todo Потрібно використати switch та при кожному значенні радіо кнопок використати перний case для їхньої фільтрації, case - фільтр що за певних умов фільтрує елементи
+
+    this.state.isCartButton
+      ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
+      : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+
+    console.log("✅onlyInputSearchValue: ", onlyInputSearchValue);
+
+    this.state.isCartButton
+      ? this.setState({
+        inputSearchValue: inputData,
+        selectedKnifesObjects: onlyInputSearchValue,
+        searchInputValue: event.target.value
+      })
+      : this.setState({
+        inputSearchValue: inputData,
+        balisongsArray: onlyInputSearchValue,
+        searchInputValue: event.target.value
+      })
+  }
   
   
   render( ) {
 
     const {
       selectedKnifesIndxs,
-      // selectedKnifesObjects,
+      selectedKnifesObjects,
       balisongsArray,
       isCartButton
 
@@ -155,8 +208,8 @@ liveBladeFiltration = () => {
     console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
 
-    const selectedKnifesObjects = updateSelectedModels(selectedKnifesIndxs,
-      balisongs).sort((firstModel, secondModel) => firstModel.nameOfKnife.localeCompare(secondModel.nameOfKnife));
+    // const selectedKnifesObjects = updateSelectedModels(selectedKnifesIndxs,
+    //   balisongs).sort((firstModel, secondModel) => firstModel.nameOfKnife.localeCompare(secondModel.nameOfKnife));
     
     const totalTypes = isCartButton ? selectedKnifesObjects.length : balisongsArray.length;
     
@@ -169,11 +222,14 @@ liveBladeFiltration = () => {
         onCart={this.cartFiltration}
         selectedLength={selectedKnifesObjects.length}
       />
-      <Sorter />
+      <Sorter
+        onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
+        searchInputValue={this.state.searchInputValue}
+      />
       <Section
         title={this.state.title}
         selectedKnifesObjects={selectedKnifesObjects}
-        isCartButton={this.state.isCartButton}
+        isCartButton={isCartButton}
         totalTypes={totalTypes}
       >
         <BalisongList
