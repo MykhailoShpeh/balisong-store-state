@@ -10,9 +10,14 @@ export function BalisongList({
     items,
     onActive,
     selectedKnifesIndxs,
+    totalTypes
 }) {
     return (
-        <ul className={css.list}>
+        <>
+            {
+                totalTypes == 0
+                    ? <h3 className={css.searchTitle}>Нічого не знайдено... 😔</h3>
+                    :  <ul className={css.list}>
             {items.map
                 ((item, index) =>
                     <li className={css.card} key={item.id}>
@@ -34,7 +39,9 @@ export function BalisongList({
                         />
                     </li>
                 )}
-        </ul>
+            </ul>
+            }
+        </>
     )
 
     // return (

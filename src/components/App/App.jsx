@@ -236,6 +236,7 @@ liveBladeFiltration = () => {
           items={isCartButton ? selectedKnifesObjects : balisongsArray}
           onActive={this.ActiveButton}
           selectedKnifesIndxs={selectedKnifesIndxs}
+          totalTypes={totalTypes}
         />
       </Section>
     </>
