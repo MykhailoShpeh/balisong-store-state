@@ -51,7 +51,10 @@ state = {
   isCartButton: false,
   selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongsArray.filter((el) => item === el.id)),
   balisongsArrayAfterFiltration: balisongs,
-  inputSearchValue: ""
+  inputSearchValue: "",
+  searchInputValue: "", //! значення пошукового інпуту
+  radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
+  inputSearchPlaceholder: "Введіть назву ножа" //! значення placeholder для inputSearch
 }
   
   
@@ -173,11 +176,41 @@ liveBladeFiltration = () => {
     const inputData = event.target.value;
     let onlyInputSearchValue;
 
+
+    console.log("inputData: ", inputData)
     //todo Потрібно використати switch та при кожному значенні радіо кнопок використати перний case для їхньої фільтрації, case - фільтр що за певних умов фільтрує елементи
 
-    this.state.isCartButton
-      ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
-      : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+    switch (this.state.radioButtonValue) {
+      case "name":
+        //! за іменем
+        this.state.isCartButton
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+
+      case "price":
+        //! за ціною
+        this.state.isCartButton
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.price.toLowerCase().startsWith(inputData.trim().toLowerCase()))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+        break;
+
+      case "typeOfBlade":
+        //    //! за типом леза
+        this.state.isCartButton
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+        break;
+
+      case "weight":
+        //! за вагою
+        this.state.isCartButton
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight.toLowerCase().startsWith(inputData.trim().toLowerCase()))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+        break;
+
+      default:
+        console.log("Invalid");
+    }
 
     console.log("✅onlyInputSearchValue: ", onlyInputSearchValue);
 
@@ -193,6 +226,45 @@ liveBladeFiltration = () => {
         searchInputValue: event.target.value
       })
   }
+
+  handleChangeRadioButtonValue = event => {
+    console.log("Подія радіо кнопки");
+    const target = event.target.value;
+    // console.log("target: ", target);
+    let placeHolder = "";
+
+    switch (target) {
+      case "name":
+        placeHolder = "Введіть назву ножа"
+        break;
+
+      case "price":
+        placeHolder = "Введіть вартість ножа"
+        break;
+
+      case "typeOfBlade":
+        placeHolder = "Введіть тип леза ножа"
+        break;
+
+      case "weight":
+        placeHolder = "Введіть вагу ножа"
+        break;
+
+      default:
+        console.log("Invalid");
+    }
+
+    let array = [];
+
+    this.setState({
+      radioButtonValue: target,
+      inputSearchPlaceholder: placeHolder,
+      searchInputValue: "",
+      balisongsArray: this.state.balisongsArrayAfterFiltration,
+      selectedKnifesObjects: this.state.selectedKnifesObjectsAfterFiltration
+    })
+
+  }
   
   
   render( ) {
@@ -201,8 +273,11 @@ liveBladeFiltration = () => {
       selectedKnifesIndxs,
       selectedKnifesObjects,
       balisongsArray,
-      isCartButton
-
+      isCartButton,
+      inputSearchValue,
+      searchInputValue,
+      radioButtonValue,
+      inputSearchPlaceholder
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
@@ -216,7 +291,7 @@ liveBladeFiltration = () => {
 
     const totalModels = totalModelsArray.length
 
-    console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
+    // console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
 
     // const selectedKnifesObjects = updateSelectedModels(selectedKnifesIndxs,
@@ -235,7 +310,10 @@ liveBladeFiltration = () => {
       />
       <Sorter
         onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
-        searchInputValue={this.state.searchInputValue}
+        searchInputValue={searchInputValue}
+        onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
+        radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
+        inputSearchPlaceholder={inputSearchPlaceholder}
       />
       <Section
         title={this.state.title}

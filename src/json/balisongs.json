@@ -3,7 +3,7 @@
         "id": "001",
         "nameOfKnife": "CK-SR Balisong Trainer",
         "brand": "ARMED SHARK",
-        "price": "$218 USD",
+        "price": "218 USD",
         "typeOfKnife": "trainer",
         "image": "/balisong-store-state/1.png",
         "materials": [
@@ -11,7 +11,7 @@
             "Titanium"
         ],
         "link": "https://armedshark.com/products/armed-shark-ck-sr-balisong-trainer-butterfly-knife",
-        "weight": "About 123 g",
+        "weight": "123 g",
         "accessories": "Practice trainer, Repair kit, Pouch, Presentation box, Flipping tutorial",
         "photos": [
             "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr.webp",
@@ -29,14 +29,14 @@
         "id": "002",
         "nameOfKnife": "TOUCH TIMES Kraken V3 Trainer Clone",
         "brand": "Balisong Butterfly Knife Store",
-        "price": "$25 USD",
+        "price": "25 USD",
         "typeOfKnife": "trainer",
         "image": "/balisong-store-state/2.png",
         "materials": [
             "6061 Aluminium"
         ],
         "link": "https://bbksbalisong.com/products/touch-times-kraken-v3-clone-6061-aluminum-handle?srsltid=AfmBOoocsoCdVmHPSr7sLSRyA0DwKDfDzZ_9cakZRLwSlBnRuc0Owhaw",
-        "weight": "About 110 g",
+        "weight": "110 g",
         "accessories": "Repair kit, Pouch",
         "photos": [
             "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer1.avif",
@@ -55,14 +55,14 @@
         "id": "003",
         "nameOfKnife": "Squiddy",
         "brand": "Squid Industries",
-        "price": "$50 USD",
+        "price": "50 USD",
         "typeOfKnife": "trainer",
         "image": "/balisong-store-state/3.png",
         "materials": [
             "CPVC (Plastic)"
         ],
         "link": "http://squidindustries.co/products/squiddy",
-        "weight": "About 70.8 g",
+        "weight": "70.8 g",
         "accessories": false,
         "photos": [
             "/balisong-store-state/3.png",
@@ -78,7 +78,7 @@
         "id": "004",
         "nameOfKnife": "Hydra Trainer",
         "brand": "NABALIS",
-        "price": "$120 USD",
+        "price": "120 USD",
         "typeOfKnife": "trainer",
         "image": "/balisong-store-state/hydra.webp",
         "materials": [
@@ -86,7 +86,7 @@
             "440C Steel"
         ],
         "link": "https://nabalis.com/products/nabalils-hydra-butterfly-knife-balisong-trainer-japenese-tanto-bowie-blade-7075aluminum?variant=45579585159318",
-        "weight": "About 115 g",
+        "weight": "115 g",
         "accessories": "ghost stand",
         "photos": [
             "/balisong-store-state/photos/hydra/hydra-trainer.webp",
@@ -104,7 +104,7 @@
         "id": "005",
         "nameOfKnife": "Moab x Meridian - Purple Rain",
         "brand": "Glidr",
-        "price": "$135 USD",
+        "price": "135 USD",
         "typeOfKnife": "trainer",
         "image": "/balisong-store-state/glidr-moab.webp",
         "materials": [
@@ -112,7 +112,7 @@
             "Hardened 420 stainless steel"
         ],
         "link": "https://glidr.co/collections/moab-x-meridian/products/moab-x-meridian-purple-rain",
-        "weight": "About 114 g",
+        "weight": "114 g",
         "accessories": "Secondary parts",
         "photos": [
             "/balisong-store-state/photos/moab-meridian/moab-meridian.webp",
@@ -128,7 +128,7 @@
         "id": "006",
         "nameOfKnife": "Tsunami Zirblast",
         "brand": "Squid Industries",
-        "price": "$750 USD",
+        "price": "750 USD",
         "typeOfKnife": "live blade",
         "image": "/balisong-store-state/zirblast-tsunami.webp",
         "materials": [
@@ -136,7 +136,7 @@
             "CPM S35-VN"
         ],
         "link": "https://squidindustriesknives.co/products/zirblast-tsunami",
-        "weight": "About 113 g",
+        "weight": "113 g",
         "accessories": "stainless steel hardware kit, repair part",
         "photos": [
             "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast.webp",
@@ -152,14 +152,14 @@
         "id": "007",
         "nameOfKnife": "Canyon-Stainless Steel Trainer with False Edge",
         "brand": "nabalis",
-        "price": "$50 USD",
+        "price": "50 USD",
         "typeOfKnife": "live blade",
         "image": "/balisong-store-state/canyon.webp",
         "materials": [
             "420 Stainless Steel"
         ],
         "link": "https://nabalis.com/products/nabalis-canyon-ss-balisong-butterfly-knife-with-false-edge?_pos=1&_sid=43af6df6c&_ss=r",
-        "weight": "About 126 g",
+        "weight": "126 g",
         "accessories": "new style box and spare hardware kit {2 bushings; 2 pairs of pivot screws; 4 washers; 1 torx screwdriver bit}",
         "photos": [
             "/balisong-store-state/photos/canyon/canyon.webp",
@@ -176,7 +176,7 @@
         "id": "008",
         "nameOfKnife": "Apocalypse Vixen Clone false edge",
         "brand": "bbks",
-        "price": "$60 USD",
+        "price": "60 USD",
         "typeOfKnife": "live blade",
         "image": "/balisong-store-state/apocalypse-vixen.webp",
         "materials": [
@@ -184,7 +184,7 @@
             "stainless steel"
         ],
         "link": "https://bbksbalisong.com/products/apocalypse-vixen-v2-balisong-clone-7075-aluminum-handle-false-edge",
-        "weight": "About 100 g",
+        "weight": "100 g",
         "accessories": "Repair kit",
         "_photos": [],
         "model": {
@@ -197,7 +197,7 @@
         "id": "009",
         "nameOfKnife": "Yuppie Telesto Balisong Clone False Edge",
         "brand": "bbks",
-        "price": "$123 USD",
+        "price": "123 USD",
         "typeOfKnife": "live blade",
         "image": "/balisong-store-state/yuppie.webp",
         "materials": [
@@ -205,7 +205,7 @@
             "5Cr16 steel"
         ],
         "link": "https://bbksbalisong.com/products/yuppie-telesto-clone",
-        "weight": "About 135 g",
+        "weight": "135 g",
         "accessories": "Repair kit",
         "photos": [
             "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto.webp",
@@ -221,7 +221,7 @@
         "id": "010",
         "nameOfKnife": "Etched Titanium Krake Raken Tanto",
         "brand": "Squid Industries",
-        "price": "$470 USD",
+        "price": "470 USD",
         "typeOfKnife": "live blade",
         "image": "/balisong-store-state/krake-tanto.webp",
         "materials": [
@@ -230,7 +230,7 @@
             "7075 Aluminum"
         ],
         "link": "https://squidindustriesknives.co/products/etched-titanium-krake-raken-tanto",
-        "weight": "About 118 g",
+        "weight": "118 g",
         "accessories": "Repair kit",
         "photos": [
             "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken.avif",
