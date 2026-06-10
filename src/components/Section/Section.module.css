@@ -13,5 +13,11 @@
 .titleTotalTypes {
     color: #a1a1b7;
  text-align: center;
- margin-bottom: 40px;
+ margin-bottom: 20px;
+}
+
+.titleTotalModels {
+    color: #a1a1b7;
+    text-align: center;
+        margin-bottom: 40px;
 }

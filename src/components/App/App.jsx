@@ -205,6 +205,17 @@ liveBladeFiltration = () => {
 
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
+    //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
+    const totalModelsArray = isCartButton
+      ? selectedKnifesObjects
+        .flatMap(item => Object.values(item.model)
+          .filter(value => value > 0))
+      : balisongsArray
+        .flatMap(item => Object.values(item.model)
+          .filter(value => value > 0));
+
+    const totalModels = totalModelsArray.length
+
     console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
 
@@ -231,6 +242,7 @@ liveBladeFiltration = () => {
         selectedKnifesObjects={selectedKnifesObjects}
         isCartButton={isCartButton}
         totalTypes={totalTypes}
+        totalModels={totalModels}
       >
         <BalisongList
           items={isCartButton ? selectedKnifesObjects : balisongsArray}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './Section.module.css';
 
-export function Section({ isOn = true, title, children, selectedKnifesObjects, isCartButton,  totalTypes }) {
+export function Section({ isOn = true, title, children, selectedKnifesObjects, isCartButton, totalTypes, totalModels }) {
     return (
         selectedKnifesObjects.length == 0 && isCartButton ? <h1 className={css.nullTitle}>Додайте товар до кошику</h1> :
         <>
@@ -11,6 +11,9 @@ export function Section({ isOn = true, title, children, selectedKnifesObjects, i
             {/* //! Рендер за умовою: */}
                     {title && <h2 className={css.title}>{title}</h2>}
                     <h3 className={css.titleTotalTypes}>Кількість типів ножів: <span>{totalTypes}</span></h3>
+                    <h3 className={css.titleTotalModels}>Кількість моделей ножів: <span>
+                        {totalModels}
+                    </span></h3>
             {children}
             </section>}
         </>

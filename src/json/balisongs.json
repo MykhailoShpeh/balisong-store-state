@@ -18,7 +18,12 @@
             "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr-2.webp",
             "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr-3.webp",
             "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr-4.webp"
-        ]
+        ],
+        "model": {
+            "CK-DR": 999,
+            "CK-SR": 999,
+            "CK-SR/DLC": 999
+        }
     },
     {   
         "id": "002",
@@ -38,7 +43,13 @@
             "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer2.avif",
             "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer3.avif",
             "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer4.png"
-        ]
+        ],
+        "model": {
+            "Black": 999,
+            "Gold": 0,
+            "Orange": 154,
+            "Green": 5
+        }
     },
     {
         "id": "003",
@@ -58,7 +69,10 @@
             "/balisong-store-state/photos/squiddy/squiddy.webp",
             "/balisong-store-state/photos/squiddy/squiddy-2.webp",
             "/balisong-store-state/photos/squiddy/squiddy-3.webp"
-        ]
+        ],
+        "model": {
+            "main": 999
+        }
     },
     {
         "id": "004",
@@ -79,7 +93,12 @@
             "/balisong-store-state/photos/hydra/hydra-2.webp",
             "/balisong-store-state/photos/hydra/hydra-3.webp",
             "/balisong-store-state/photos/hydra/hydra-4.webp"
-        ]
+        ],
+        "model": {
+            "BurgundyBlack": 999,
+            "ClassicBlack": 571,
+            "Blue Purple": 0
+        }
     },
     {
         "id": "005",
@@ -100,7 +119,10 @@
             "/balisong-store-state/photos/moab-meridian/moab-meridian-3.webp",
             "/balisong-store-state/photos/moab-meridian/moab-meridian-4.webp",
             "/balisong-store-state/glidr-moab.webp"
-        ]
+        ],
+        "model": {
+            "main": 999
+        }
     },
     {
         "id": "006",
@@ -121,7 +143,10 @@
             "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast-2.webp",
             "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast-3.avif",
             "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast-4.webp"
-        ]
+        ],
+        "model": {
+            "main": 0
+        }
     },
     {
         "id": "007",
@@ -141,7 +166,11 @@
             "/balisong-store-state/photos/canyon/canyon-2.webp",
             "/balisong-store-state/photos/canyon/canyon-3.webp",
             "/balisong-store-state/photos/canyon/canyon-4.webp"
-        ]
+        ],
+        "model": {
+            "AcidWashBlack": 999,
+            "BeadBlastSilver": 999
+        }
     },
     {
         "id": "008",
@@ -157,7 +186,12 @@
         "link": "https://bbksbalisong.com/products/apocalypse-vixen-v2-balisong-clone-7075-aluminum-handle-false-edge",
         "weight": "About 100 g",
         "accessories": "Repair kit",
-        "_photos": []
+        "_photos": [],
+        "model": {
+            "Red": 0,
+            "Blue": 999,
+            "Green": 999
+        }
     },
     {
         "id": "009",
@@ -178,7 +212,10 @@
             "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto-2.webp",
             "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto-3.webp",
             "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto-4.jpg"
-        ]
+        ],
+        "model": {
+            "main": 0
+        }
     },
     {
         "id": "010",
@@ -200,6 +237,11 @@
             "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken-2.avif",
             "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken-3.avif",
             "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken-4.webp"
-        ]
+        ],
+        "model": {
+            "Teal": 999,
+            "Magenta": 999,
+            "Blue": 999
+        }
     }
 ]
