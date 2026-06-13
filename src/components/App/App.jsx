@@ -45,7 +45,7 @@ state = {
   balisongsArray: balisongs,
   title: 'Колекція балісонгів',
   //! Властивості для кошика
-  activeButtonIndex: null,
+  // activeButtonIndex: null,
   selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [], //! масив індексів обраних ножів
   selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)), //! //! масив обраних моделей
   isCartButton: false,
@@ -153,24 +153,25 @@ liveBladeFiltration = () => {
       });
     }
 
-    // this.selectedKnifesObjects()
+    this.selectedKnifesObjects()
 
   }
 
   //! Формуємо(оновлюємо) масив обраних моделей [selectedModels]
 
-  // selectedKnifesObjects = () => {
-  //   console.log("Функція selectedKnifesObjects")
+  selectedKnifesObjects = () => {
+    console.log("Функція selectedKnifesObjects")
 
-  //   this.setState(
-  //     prevState =>
-  //     ({
-  //       selectedKnifesObjects: prevState.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
-  //     }))
+    this.setState(
+      prevState =>
+      ({
+        selectedKnifesObjects: prevState.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id)),
+        selectedKnifesObjectsAfterFiltration: prevState.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
+      }))
+  }
 
-  //   // return this.state.selectedKnifesIndxs.flatMap((item) => balisongs.filter((el) => item === el.id))
-  // }
 
+  //! Функція для опрацювання результату пошуку
   handleChangeInputSearchValue = event => {
     console.log("event: ", event)
     const inputData = event.target.value;
@@ -228,6 +229,7 @@ liveBladeFiltration = () => {
       })
   }
 
+  //! Функція для радіокнопок фільтрів, реагування на їхній натиск
   handleChangeRadioButtonValue = event => {
     console.log("Подія радіо кнопки");
     const target = event.target.value;
@@ -278,7 +280,8 @@ liveBladeFiltration = () => {
       inputSearchValue,
       searchInputValue,
       radioButtonValue,
-      inputSearchPlaceholder
+      inputSearchPlaceholder,
+      selectedKnifesObjectsAfterFiltration
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
@@ -296,9 +299,21 @@ liveBladeFiltration = () => {
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
 
     // const selectedKnifesObjects = updateSelectedModels(selectedKnifesIndxs,
-    //   balisongs).sort((firstModel, secondModel) => firstModel.nameOfKnife.localeCompare(secondModel.nameOfKnife));
-    
+
     const totalTypes = isCartButton ? selectedKnifesObjects.length : balisongsArray.length;
+
+    console.log("------------------------------------------------------------");
+    console.log("balisongsArray: ", balisongsArray);
+    console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
+    console.log('selectedKnifesObjects: ', selectedKnifesObjects);
+    console.log("Кількість типів ЛА:", totalTypes);
+    console.log("загальну кількість моделей <totalModels>", totalModels);
+    console.log("inputSearchValue: ", inputSearchValue);
+    console.log("searchInputValue: ", searchInputValue);
+    console.log("radioButtonValue: ", radioButtonValue);
+    console.log("inputSearchPlaceholder: ", inputSearchPlaceholder);
+    console.log("selectedKnifesObjectsAfterFiltration: ", selectedKnifesObjectsAfterFiltration);
+    console.log("------------------------------------------------------------");
     
   return(
     <>
@@ -309,13 +324,15 @@ liveBladeFiltration = () => {
         onCart={this.cartFiltration}
         selectedLength={selectedKnifesObjects.length}
       />
-      <Sorter
-        onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
-        searchInputValue={searchInputValue}
-        onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
-        radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
-        inputSearchPlaceholder={inputSearchPlaceholder}
-      />
+      {isCartButton && totalTypes === 0 ? null
+      : <Sorter
+          onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
+          searchInputValue={searchInputValue}
+          onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
+          radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
+          inputSearchPlaceholder={inputSearchPlaceholder}
+        />
+      }
       <Section
         title={this.state.title}
         selectedKnifesObjects={selectedKnifesObjects}

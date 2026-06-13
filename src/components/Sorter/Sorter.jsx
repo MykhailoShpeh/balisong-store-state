@@ -10,7 +10,7 @@ export function Sorter({
     return (
         <div className={css.sorter}>
             <h2 className={css.title}>Пошук ножа за фільтрами</h2>
-            <form>
+            <form className={css.form}>
                 <label>
                     <input
                         type="radio"
@@ -18,7 +18,6 @@ export function Sorter({
                         value="name"
                         checked={radioButtonValue === "name"}
                         onChange={onHandleChangeRadioButtonValue}
-
                     />
                     Назва
                 </label>
@@ -29,7 +28,6 @@ export function Sorter({
                         value="price"
                         checked={radioButtonValue === "price"}
                         onChange={onHandleChangeRadioButtonValue}
-
                     />
                     Ціна
                 </label>
@@ -40,7 +38,6 @@ export function Sorter({
                         value="typeOfBlade"
                         checked={radioButtonValue === "typeOfBlade"}
                         onChange={onHandleChangeRadioButtonValue}
-
                     />
                     Тип леза
                 </label>
@@ -51,7 +48,6 @@ export function Sorter({
                         value="weight"
                         checked={radioButtonValue === "weight"}
                         onChange={onHandleChangeRadioButtonValue}
-
                     />
                     Вага
                 </label >

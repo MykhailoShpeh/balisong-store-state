@@ -45,3 +45,39 @@
         box-shadow: 0 0 5px #ffd500;
     }
 }
+
+.form {
+    display: flex;
+    position: relative;
+    background: #212121;
+    border-radius: 3rem;
+    padding: 0.5rem;
+    gap: 1rem;
+    box-shadow: 0 0 20px #000 inset;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.form input {
+    display: none;
+}
+
+.form label {
+    position: relative;
+    padding: 0.6rem 1.5rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ddd;
+    transition: color 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.form input:checked+label {
+    color: #fff;
+}
+
+.form label:hover {
+    color: rgb(119, 119, 202);
+}
