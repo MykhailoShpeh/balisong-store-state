@@ -47,9 +47,9 @@ state = {
   //! Властивості для кошика
   activeButtonIndex: null,
   selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [], //! масив індексів обраних ножів
-  selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongsArray.filter((el) => item === el.id)), //! //! масив обраних моделей
+  selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)), //! //! масив обраних моделей
   isCartButton: false,
-  selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongsArray.filter((el) => item === el.id)),
+  selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
   balisongsArrayAfterFiltration: balisongs,
   inputSearchValue: "",
   searchInputValue: "", //! значення пошукового інпуту
@@ -186,7 +186,8 @@ liveBladeFiltration = () => {
         this.state.isCartButton
           ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
           : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
-
+        break;
+      
       case "price":
         //! за ціною
         this.state.isCartButton
