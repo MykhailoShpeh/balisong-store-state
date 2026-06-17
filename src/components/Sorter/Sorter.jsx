@@ -57,6 +57,7 @@ export function Sorter({
                 type="text"
                 placeholder={inputSearchPlaceholder}
                 onChange={onHandleChangeInputSearchValue}
+                value={searchInputValue}
             />
         </div>
     )

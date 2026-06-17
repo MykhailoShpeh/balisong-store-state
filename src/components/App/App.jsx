@@ -51,7 +51,6 @@ state = {
   isCartButton: false,
   selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
   balisongsArrayAfterFiltration: balisongs,
-  inputSearchValue: "",
   searchInputValue: "", //! значення пошукового інпуту
   radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
   inputSearchPlaceholder: "Введіть назву ножа" //! значення placeholder для inputSearch
@@ -82,7 +81,8 @@ allFiltration = () => {
     balisongsArray: balisongs,
     title: 'Колекція балісонгів',
     isCartButton: false,
-    balisongsArrayAfterFiltration: balisongs
+    balisongsArrayAfterFiltration: balisongs,
+    searchInputValue: ""
   });
 
 };
@@ -95,7 +95,8 @@ safeBladeFiltration = () => {
     balisongsArray: safeBladeArray,
     title: 'Колекція trainer балісонгів',
     isCartButton: false,
-    balisongsArrayAfterFiltration: safeBladeArray
+    balisongsArrayAfterFiltration: safeBladeArray,
+    searchInputValue: ""
   });
 };
 
@@ -107,8 +108,8 @@ liveBladeFiltration = () => {
     balisongsArray: liveBladeArray,
     title: 'Колекція live blade балісонгів',
     isCartButton: false,
-    balisongsArrayAfterFiltration: liveBladeArray
-
+    balisongsArrayAfterFiltration: liveBladeArray,
+    searchInputValue: ""
   });
 };
   
@@ -120,8 +121,8 @@ liveBladeFiltration = () => {
       balisongsArray: this.state.selectedKnifesObjects,
       title: 'Кошик',
       isCartButton: true,
-      balisongsArrayAfterFiltration: this.state.selectedKnifesObjects
-
+      balisongsArrayAfterFiltration: this.state.selectedKnifesObjects,
+      searchInputValue: ""
     });
   };
 
@@ -192,8 +193,8 @@ liveBladeFiltration = () => {
       case "price":
         //! за ціною
         this.state.isCartButton
-          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.price.toLowerCase().startsWith(inputData.trim().toLowerCase()))
-          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.price <= Number(inputData))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price <= Number(inputData));
         break;
 
       case "typeOfBlade":
@@ -206,8 +207,8 @@ liveBladeFiltration = () => {
       case "weight":
         //! за вагою
         this.state.isCartButton
-          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight.toLowerCase().startsWith(inputData.trim().toLowerCase()))
-          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight.toLowerCase().includes(inputData.trim().toLowerCase()))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight.toLowerCase().includes(inputData.trim().toLowerCase()));
         break;
 
       default:
@@ -218,12 +219,10 @@ liveBladeFiltration = () => {
 
     this.state.isCartButton
       ? this.setState({
-        inputSearchValue: inputData,
         selectedKnifesObjects: onlyInputSearchValue,
         searchInputValue: event.target.value
       })
       : this.setState({
-        inputSearchValue: inputData,
         balisongsArray: onlyInputSearchValue,
         searchInputValue: event.target.value
       })
@@ -277,7 +276,6 @@ liveBladeFiltration = () => {
       selectedKnifesObjects,
       balisongsArray,
       isCartButton,
-      inputSearchValue,
       searchInputValue,
       radioButtonValue,
       inputSearchPlaceholder,
@@ -308,7 +306,6 @@ liveBladeFiltration = () => {
     console.log('selectedKnifesObjects: ', selectedKnifesObjects);
     console.log("Кількість типів ЛА:", totalTypes);
     console.log("загальну кількість моделей <totalModels>", totalModels);
-    console.log("inputSearchValue: ", inputSearchValue);
     console.log("searchInputValue: ", searchInputValue);
     console.log("radioButtonValue: ", radioButtonValue);
     console.log("inputSearchPlaceholder: ", inputSearchPlaceholder);

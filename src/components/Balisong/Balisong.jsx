@@ -53,7 +53,7 @@ export function Balisong({
         <div className={css.fullInfoDiv}>
         <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
         <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
-        <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price}</p>
+        <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price} USD</p>
         <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
         <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
         <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
