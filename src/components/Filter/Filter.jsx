@@ -1,12 +1,18 @@
 import css from './Filter.module.css'
 
-export function Filter({ onAll, onSafeBlade, onLiveBlade, onCart, selectedLength }) {
+export function Filter({
+    onAll,
+    onSafeBlade,
+    onLiveBlade,
+    onCart,
+    selectedLength,
+    activeButton }) {
 return (
     <div
         className={css.filterBox}
     >
         <button
-            className={css.buttonFiltration}
+            className={activeButton === "allButton" ? `${css.buttonFiltration} ${css.active}` : css.buttonFiltration}
             type="button"
             onClick={onAll}
         >
@@ -14,7 +20,7 @@ return (
         </button>
 
         <button
-            className={css.buttonFiltration}
+            className={activeButton === "safeBladeButton" ? `${css.buttonFiltration} ${css.active}` : css.buttonFiltration}
             type="button"
             onClick={onSafeBlade}
         >
@@ -22,7 +28,7 @@ return (
         </button>
 
         <button
-            className={css.buttonFiltration}
+            className={activeButton === "liveBladeButton" ? `${css.buttonFiltration} ${css.active}` : css.buttonFiltration}
             type="button"
             onClick={onLiveBlade}
         >
@@ -30,7 +36,7 @@ return (
         </button>
 
         <button
-            className={css.buttonFiltration}
+            className={activeButton === "cartButton" ? `${css.buttonFiltration} ${css.active}` : css.buttonFiltration}
             type="button"
             onClick={onCart}
         >

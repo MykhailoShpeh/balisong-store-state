@@ -45,7 +45,7 @@ state = {
   balisongsArray: balisongs,
   title: 'Колекція балісонгів',
   //! Властивості для кошика
-  // activeButtonIndex: null,
+  activeButton: "allButton",
   selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [], //! масив індексів обраних ножів
   selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)), //! //! масив обраних моделей
   isCartButton: false,
@@ -80,6 +80,7 @@ allFiltration = () => {
   this.setState({
     balisongsArray: balisongs,
     title: 'Колекція балісонгів',
+    activeButton: "allButton",
     isCartButton: false,
     balisongsArrayAfterFiltration: balisongs,
     searchInputValue: ""
@@ -94,6 +95,7 @@ safeBladeFiltration = () => {
   this.setState({
     balisongsArray: safeBladeArray,
     title: 'Колекція trainer балісонгів',
+    activeButton: "safeBladeButton",
     isCartButton: false,
     balisongsArrayAfterFiltration: safeBladeArray,
     searchInputValue: ""
@@ -107,6 +109,7 @@ liveBladeFiltration = () => {
   this.setState({
     balisongsArray: liveBladeArray,
     title: 'Колекція live blade балісонгів',
+    activeButton: "liveBladeButton",
     isCartButton: false,
     balisongsArrayAfterFiltration: liveBladeArray,
     searchInputValue: ""
@@ -120,6 +123,7 @@ liveBladeFiltration = () => {
     this.setState({
       balisongsArray: this.state.selectedKnifesObjects,
       title: 'Кошик',
+      activeButton: "cartButton",
       isCartButton: true,
       balisongsArrayAfterFiltration: this.state.selectedKnifesObjects,
       searchInputValue: ""
@@ -274,6 +278,7 @@ liveBladeFiltration = () => {
     const {
       selectedKnifesIndxs,
       selectedKnifesObjects,
+      activeButton,
       balisongsArray,
       isCartButton,
       searchInputValue,
@@ -320,6 +325,7 @@ liveBladeFiltration = () => {
         onLiveBlade={this.liveBladeFiltration}
         onCart={this.cartFiltration}
         selectedLength={selectedKnifesObjects.length}
+        activeButton={activeButton}
       />
       {isCartButton && totalTypes === 0 ? null
       : <Sorter

@@ -38,3 +38,11 @@
 .buttonFiltration:active {
     transform: scale(0.97);
 }
+
+.buttonFiltration:focus {
+    outline: 1px #82d7f1 solid;
+}
+
+.active {
+    outline: 1px #82d7f1 solid;
+}

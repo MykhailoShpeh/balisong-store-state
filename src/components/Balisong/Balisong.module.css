@@ -25,7 +25,12 @@
 }
 
 .fullInfoDiv {
+    position: absolute;
+    top: 385px;
     display: none;
+    z-index: 1000;
+    background-color: #2f2f34;
+    border-radius: 4px;
 }
 
 .active {
