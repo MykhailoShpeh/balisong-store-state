@@ -11,7 +11,7 @@
             "Titanium"
         ],
         "link": "https://armedshark.com/products/armed-shark-ck-sr-balisong-trainer-butterfly-knife",
-        "weight": "123 g",
+        "weight": "123",
         "accessories": "Practice trainer, Repair kit, Pouch, Presentation box, Flipping tutorial",
         "photos": [
             "/balisong-store-state/photos/armed-shark-ck-sr/armed-shark-ck-sr.webp",
@@ -36,7 +36,7 @@
             "6061 Aluminium"
         ],
         "link": "https://bbksbalisong.com/products/touch-times-kraken-v3-clone-6061-aluminum-handle?srsltid=AfmBOoocsoCdVmHPSr7sLSRyA0DwKDfDzZ_9cakZRLwSlBnRuc0Owhaw",
-        "weight": "110 g",
+        "weight": "110",
         "accessories": "Repair kit, Pouch",
         "photos": [
             "/balisong-store-state/photos/touch-times-kraken-trainer/touch-times-kraken-trainer1.avif",
@@ -62,7 +62,7 @@
             "CPVC (Plastic)"
         ],
         "link": "http://squidindustries.co/products/squiddy",
-        "weight": "70.8 g",
+        "weight": "70.8",
         "accessories": false,
         "photos": [
             "/balisong-store-state/3.png",
@@ -86,7 +86,7 @@
             "440C Steel"
         ],
         "link": "https://nabalis.com/products/nabalils-hydra-butterfly-knife-balisong-trainer-japenese-tanto-bowie-blade-7075aluminum?variant=45579585159318",
-        "weight": "115 g",
+        "weight": "115",
         "accessories": "ghost stand",
         "photos": [
             "/balisong-store-state/photos/hydra/hydra-trainer.webp",
@@ -112,7 +112,7 @@
             "Hardened 420 stainless steel"
         ],
         "link": "https://glidr.co/collections/moab-x-meridian/products/moab-x-meridian-purple-rain",
-        "weight": "114 g",
+        "weight": "114",
         "accessories": "Secondary parts",
         "photos": [
             "/balisong-store-state/photos/moab-meridian/moab-meridian.webp",
@@ -136,7 +136,7 @@
             "CPM S35-VN"
         ],
         "link": "https://squidindustriesknives.co/products/zirblast-tsunami",
-        "weight": "113 g",
+        "weight": "113",
         "accessories": "stainless steel hardware kit, repair part",
         "photos": [
             "/balisong-store-state/photos/tsunami-zirblast/tsunami-zirblast.webp",
@@ -159,7 +159,7 @@
             "420 Stainless Steel"
         ],
         "link": "https://nabalis.com/products/nabalis-canyon-ss-balisong-butterfly-knife-with-false-edge?_pos=1&_sid=43af6df6c&_ss=r",
-        "weight": "126 g",
+        "weight": "126",
         "accessories": "new style box and spare hardware kit {2 bushings; 2 pairs of pivot screws; 4 washers; 1 torx screwdriver bit}",
         "photos": [
             "/balisong-store-state/photos/canyon/canyon.webp",
@@ -184,7 +184,7 @@
             "stainless steel"
         ],
         "link": "https://bbksbalisong.com/products/apocalypse-vixen-v2-balisong-clone-7075-aluminum-handle-false-edge",
-        "weight": "100 g",
+        "weight": "100",
         "accessories": "Repair kit",
         "_photos": [],
         "model": {
@@ -205,7 +205,7 @@
             "5Cr16 steel"
         ],
         "link": "https://bbksbalisong.com/products/yuppie-telesto-clone",
-        "weight": "135 g",
+        "weight": "135",
         "accessories": "Repair kit",
         "photos": [
             "/balisong-store-state/photos/yuppie-telesto/yuppie-telesto.webp",
@@ -230,7 +230,7 @@
             "7075 Aluminum"
         ],
         "link": "https://squidindustriesknives.co/products/etched-titanium-krake-raken-tanto",
-        "weight": "118 g",
+        "weight": "118",
         "accessories": "Repair kit",
         "photos": [
             "/balisong-store-state/photos/etched-krake-raken/etched-krake-raken.avif",

@@ -176,12 +176,60 @@ liveBladeFiltration = () => {
   }
 
 
+  // performSearch = textInput => {
+  //   let onlyInputSearchValue;
+
+  //   switch (this.state.radioButtonValue) {
+  //     case "name":
+  //       //! за іменем
+  //       this.state.isCartButton
+  //         ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
+  //         : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+  //       break;
+
+  //     case "price":
+  //       //! за ціною
+  //       this.state.isCartButton
+  //         ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.price <= Number(inputData))
+  //         : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price <= Number(inputData));
+  //       break;
+
+  //     case "typeOfBlade":
+  //       //    //! за типом леза
+  //       this.state.isCartButton
+  //         ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
+  //         : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
+  //       break;
+
+  //     case "weight":
+  //       //! за вагою
+  //       this.state.isCartButton
+  //         ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight.toLowerCase().includes(inputData.trim().toLowerCase()))
+  //         : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight.toLowerCase().includes(inputData.trim().toLowerCase()));
+  //       break;
+
+  //     default:
+  //       console.log("Invalid");
+  //   }
+
+  //   this.state.isCartButton
+  //     ? this.setState({
+  //       selectedKnifesObjects: onlyInputSearchValue,
+  //       // searchInputValue: event.target.value
+  //     })
+  //     : this.setState({
+  //       balisongsArray: onlyInputSearchValue,
+  //       // searchInputValue: event.target.value
+  //     })
+  // }
+
   //! Функція для опрацювання результату пошуку
   handleChangeInputSearchValue = event => {
     console.log("event: ", event)
     const inputData = event.target.value;
     let onlyInputSearchValue;
 
+    // this.debouncedSearch(inputData);
 
     console.log("inputData: ", inputData)
     //todo Потрібно використати switch та при кожному значенні радіо кнопок використати перний case для їхньої фільтрації, case - фільтр що за певних умов фільтрує елементи
@@ -211,8 +259,8 @@ liveBladeFiltration = () => {
       case "weight":
         //! за вагою
         this.state.isCartButton
-          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight.toLowerCase().includes(inputData.trim().toLowerCase()))
-          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight.toLowerCase().includes(inputData.trim().toLowerCase()));
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => Number(item.weight) <= Number(inputData))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => Number(item.weight) <= Number(inputData));
         break;
 
       default:
@@ -231,6 +279,10 @@ liveBladeFiltration = () => {
         searchInputValue: event.target.value
       })
   }
+
+  // componentWillUnmount() {
+  //   this.debouncedSearch.cancel();
+  // };
 
   //! Функція для радіокнопок фільтрів, реагування на їхній натиск
   handleChangeRadioButtonValue = event => {

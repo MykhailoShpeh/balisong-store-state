@@ -11,7 +11,7 @@ export function Sorter({
         <div className={css.sorter}>
             <h2 className={css.title}>Пошук ножа за фільтрами</h2>
             <form className={css.form}>
-                <label>
+                <label className={radioButtonValue === "name" ? css.active : null}>
                     <input
                         type="radio"
                         name="sort"
@@ -21,7 +21,7 @@ export function Sorter({
                     />
                     Назва
                 </label>
-                <label >
+                <label className={radioButtonValue === "price" ? css.active : null}>
                     <input
                         type="radio"
                         name="sort"
@@ -31,7 +31,7 @@ export function Sorter({
                     />
                     Ціна
                 </label>
-                <label >
+                <label className={radioButtonValue === "typeOfBlade" ? css.active : null}>
                     <input
                         type="radio"
                         name="sort"
@@ -41,7 +41,7 @@ export function Sorter({
                     />
                     Тип леза
                 </label>
-                <label >
+                <label className={radioButtonValue === "weight" ? css.active : null}>
                     <input
                         type="radio"
                         name="sort"
