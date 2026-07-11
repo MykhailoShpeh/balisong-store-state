@@ -3,7 +3,7 @@ import css from './Sorter.module.css'
 export function Sorter({
     onHandleChangeInputSearchValue,   //? Підняття стану
     searchInputValue,
-     onHandleChangeRadioButtonValue,
+    onHandleChangeRadioButtonValue,
     radioButtonValue,
     inputSearchPlaceholder
 }) {
@@ -31,16 +31,25 @@ export function Sorter({
                     />
                     Ціна
                 </label>
-                <label className={radioButtonValue === "typeOfBlade" ? css.active : null}>
-                    <input
+                {/* <label className={radioButtonValue === "typeOfBlade" ? css.active : null}>
+                    <select
+                        name="sort"
+                        value="{typeOfBlade}"
+                        id=""
+                        onChange={onHandleChangeRadioButtonValue}
+                        
+                    >
+                        <option value="trainer">Тренувальне</option>
+                        <option value="live blade">Небезпечне</option>
+                    </select> */}
+                    {/* <input
                         type="radio"
                         name="sort"
-                        value="typeOfBlade"
-                        checked={radioButtonValue === "typeOfBlade"}
-                        onChange={onHandleChangeRadioButtonValue}
-                    />
-                    Тип леза
-                </label>
+                        
+
+                    /> */}
+                    {/* Тип леза
+                </label> */}
                 <label className={radioButtonValue === "weight" ? css.active : null}>
                     <input
                         type="radio"

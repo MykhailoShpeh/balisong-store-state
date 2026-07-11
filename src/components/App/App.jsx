@@ -16,6 +16,8 @@ import css from './App.module.css';
 
 import { Filter } from '@/components/Filter/Filter.jsx';
 
+import { Select } from  '@/components/Select/Select.jsx';
+
 import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
 import { Sorter } from '@/components/Sorter/Sorter.jsx';
@@ -56,8 +58,10 @@ state = {
   balisongsArrayAfterFiltration: balisongs,
   searchInputValue: "", //! значення пошукового інпуту
   radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
-  inputSearchPlaceholder: "Введіть назву ножа" //! значення placeholder для inputSearch
+  inputSearchPlaceholder: "Введіть назву ножа", //! значення placeholder для inputSearch
+  balisongsBladeType: balisongs
 }
+
   
   
   componentDidMount() {
@@ -197,12 +201,12 @@ liveBladeFiltration = () => {
           : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price <= Number(textInput));
         break;
 
-      case "typeOfBlade":
-        //    //! за типом леза
-        this.state.isCartButton
-          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(textInput.trim().toLowerCase()))
-          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(textInput.trim().toLowerCase()));
-        break;
+      // case "typeOfBlade":
+      //   //    //! за типом леза
+      //   this.state.isCartButton
+      //     ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(textInput.trim().toLowerCase()))
+      //     : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(textInput.trim().toLowerCase()));
+      //   break;
 
       case "weight":
         //! за вагою
@@ -310,9 +314,9 @@ liveBladeFiltration = () => {
         placeHolder = "Введіть вартість ножа"
         break;
 
-      case "typeOfBlade":
-        placeHolder = "Введіть тип леза ножа"
-        break;
+      // case "typeOfBlade":
+      //   placeHolder = "Введіть тип леза ножа"
+      //   break;
 
       case "weight":
         placeHolder = "Введіть вагу ножа"
@@ -332,6 +336,34 @@ liveBladeFiltration = () => {
       selectedKnifesObjects: this.state.selectedKnifesObjectsAfterFiltration
     })
 
+  }
+
+   getBladeType = bladeType => {
+    console.log("Сюди приходить масив bladeType:", bladeType);
+    //todo  при виборі масштабу потрібно аналізувати стан фільтрів та згідно з обраного фільтру брати необхідний масив для подальшої роботи
+
+    let result = [];
+
+    switch (this.state.activeButton) {
+      case "allButton":
+          result = bladeType
+        break;
+
+      case "safeBladeButton":
+        result = bladeType.filter(item => item.typeOfKnife === "trainer")
+        break;
+
+      case "liveBladeButton":
+        result = bladeType.filter(item => item.typeOfKnife === "live blade")
+        break;
+      }
+
+      this.setState({
+      balisongsBladeType: bladeType,
+      balisongsArray: result,
+      balisongsArrayAfterFiltration: result,
+      searchInputValue: ""
+    })
   }
   
   
@@ -389,6 +421,10 @@ liveBladeFiltration = () => {
         selectedLength={selectedKnifesObjects.length}
         activeButton={activeButton}
       />
+
+      <Select
+      onGetBladeType={this.getBladeType}
+       />
       {isCartButton && totalTypes === 0 ? null
       : <Sorter
           onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
