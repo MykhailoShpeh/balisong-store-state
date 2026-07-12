@@ -22,9 +22,16 @@ export class Select extends Component {
             onGetBladeType
         } = this.props;
 
-        const bladeType = value == "all"
+        //!! const modelsSelectedScale = value == "all"
+        //     ? aircrafts
+        //     : aircrafts.filter(aircraft => aircraft.model.scale.some(item =>
+        //         item === Number(value)))
+
+        const bladeType = value === "all"
             ? balisongs
-            : balisongs.filter(item => item.typeOfKnife === this.state.typeOfBlade)
+            : balisongs.filter(item => item.typeOfKnife === value)
+
+            console.log("Тут створюється масив bladeType:", bladeType);
 
         // //! Зберігаємо значення інпутів в state
         this.setState({
