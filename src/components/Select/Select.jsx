@@ -54,11 +54,12 @@ export class Select extends Component {
         console.log("-----------------------------------------------");
 
         return (
-            <div
-            ><h3 >Оберіть тип леза ножа:</h3>
+            <div>
+                <h3 className={css.title}>Оберіть тип леза ножа:</h3>
             <label>
                     <select
-                        name="typeOfBlade"
+                        name="typeOfBlade" 
+                        className={css.select}
                         value={typeOfBlade}
                         onChange={this.handleChange}
                         
