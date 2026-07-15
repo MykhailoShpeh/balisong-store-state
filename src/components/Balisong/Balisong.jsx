@@ -1,8 +1,10 @@
-import css from './Balisong.module.css';
+import { useState } from "react";
 
 import { Modal } from "@/components/Modal/Modal.jsx"
 
 import template from "@/components/Balisong/template-out-of-stock.jpg";
+
+import css from './Balisong.module.css';
 
 //! Ім'я ножа
 import { FiTag } from "react-icons/fi";
@@ -40,6 +42,10 @@ export function Balisong({
 }) {
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
+
+    const [isOpen, setIsOpen] = useState(false);
+
+
     return <>
         <h2 className={css.title}>  {nameOfKnife}</h2>
         <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
@@ -48,8 +54,9 @@ export function Balisong({
             className={css.fullInfoTitle}
             onClick={(event) => {
                 event.currentTarget.nextElementSibling.classList.toggle(css.active)
+                setIsOpen(prev => !prev)
             }}
-        >{}Повна інформація</button>
+        >{isOpen ? "Згорнута інформація" : "Повна інформація"}</button>
         <div className={css.fullInfoDiv}>
         <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
         <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
