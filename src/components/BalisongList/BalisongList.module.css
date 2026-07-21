@@ -20,7 +20,7 @@
     background: #414149;
     color: #e0e0e0;
     position: relative;
-    border: 1px solid rgba(255, 80, 80, 0.35);
+    border: 1px solid rgba(202, 60, 155, 0.35);
     border-radius: 14px;
 
     padding: 15px;
@@ -54,6 +54,6 @@
 
 .card:hover {
     transform: scale(1.03);
-    border: rgb(119, 119, 202) 1px solid;
+    border: #7D8CC4 1px solid;
     z-index: 1;
 }
