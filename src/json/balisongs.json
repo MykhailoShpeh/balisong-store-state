@@ -243,5 +243,31 @@
             "Magenta": 999,
             "Blue": 999
         }
+    },
+    {
+        "id": "011",
+        "nameOfKnife": "Titanium Krake Raken Damascus",
+        "brand": "Squid Industries",
+        "price": 670,
+        "typeOfKnife": "live blade",
+        "image": "/balisong-store-state/damascus-tanto.webp",
+        "materials": [
+            "6AL-4V Handles,",
+            "titanium,",
+            "7075 Aluminum"
+        ],
+        "link": "https://squidindustriesknives.co/products/damascus-ti-krake-raken-v3",
+        "weight": "122",
+        "accessories": "",
+        "photos": [
+            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken.webp",
+            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken-2.webp",
+            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken-3.webp",
+            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken-4.webp"
+        ],
+        "model": {
+            "Tanto": 999
+        }
     }
+    
 ]
