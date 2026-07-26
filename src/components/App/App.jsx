@@ -16,7 +16,7 @@ import css from './App.module.css';
 
 import { Filter } from '@/components/Filter/Filter.jsx';
 
-import { Select } from  '@/components/Select/Select.jsx';
+import { Select } from '@/components/Select/Select.jsx';
 
 import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
@@ -44,26 +44,27 @@ balisongs.push(...arrayYes, ...arrayNo)
 
 export class App extends Component {
 
-state = {
-  // isSafeBlade: false,
-  // isLiveBlade: false
-  balisongsArray: balisongs,
-  title: 'Колекція балісонгів',
-  //! Властивості для кошика
-  activeButton: "allButton",
-  selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [], //! масив індексів обраних ножів
-  selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)), //! //! масив обраних моделей
-  isCartButton: false,
-  selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
-  balisongsArrayAfterFiltration: balisongs,
-  searchInputValue: "", //! значення пошукового інпуту
-  radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
-  inputSearchPlaceholder: "Введіть назву ножа", //! значення placeholder для inputSearch
-  balisongsBladeType: balisongs
-}
+  state = {
+    // isSafeBlade: false,
+    // isLiveBlade: false
+    balisongsArray: balisongs,
+    title: 'Колекція балісонгів',
+    //! Властивості для кошика
+    activeButton: "allButton",
+    selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [], //! масив індексів обраних ножів
+    selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)), //! //! масив обраних моделей
+    isCartButton: false,
+    selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
+    balisongsArrayAfterFiltration: balisongs,
+    searchInputValue: "", //! значення пошукового інпуту
+    radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
+    inputSearchPlaceholder: "Введіть назву ножа", //! значення placeholder для inputSearch
+    balisongsBladeType: balisongs,
+    onlyInputSearchValue: []
+  }
 
-  
-  
+
+
   componentDidMount() {
     const saved = localStorage.getItem("selectedKnifesIndxs");
     if (!saved) {
@@ -81,48 +82,48 @@ state = {
     }
   };
 
-allFiltration = () => {
-  console.log("All")
-    
-  this.setState({
-    balisongsArray: balisongs,
-    title: 'Колекція балісонгів',
-    activeButton: "allButton",
-    isCartButton: false,
-    balisongsArrayAfterFiltration: balisongs,
-    searchInputValue: ""
-  });
+  allFiltration = () => {
+    console.log("All")
 
-};
+    this.setState({
+      balisongsArray: balisongs,
+      title: 'Колекція балісонгів',
+      activeButton: "allButton",
+      isCartButton: false,
+      balisongsArrayAfterFiltration: balisongs,
+      searchInputValue: ""
+    });
 
-safeBladeFiltration = () => {
-  console.log("Safe blade")
-  const safeBladeArray = balisongs.filter(item => item.typeOfKnife === "trainer")
-  console.log("safeBladeArray: ", safeBladeArray);
-  this.setState({
-    balisongsArray: safeBladeArray,
-    title: 'Колекція trainer балісонгів',
-    activeButton: "safeBladeButton",
-    isCartButton: false,
-    balisongsArrayAfterFiltration: safeBladeArray,
-    searchInputValue: ""
-  });
-};
+  };
 
-liveBladeFiltration = () => {
-  console.log("Live blade")
-  const liveBladeArray = balisongs.filter(item => item.typeOfKnife === "live blade")
-  console.log("liveBladeArray: ", liveBladeArray);
-  this.setState({
-    balisongsArray: liveBladeArray,
-    title: 'Колекція live blade балісонгів',
-    activeButton: "liveBladeButton",
-    isCartButton: false,
-    balisongsArrayAfterFiltration: liveBladeArray,
-    searchInputValue: ""
-  });
-};
-  
+  safeBladeFiltration = () => {
+    console.log("Safe blade")
+    const safeBladeArray = balisongs.filter(item => item.typeOfKnife === "trainer")
+    console.log("safeBladeArray: ", safeBladeArray);
+    this.setState({
+      balisongsArray: safeBladeArray,
+      title: 'Колекція trainer балісонгів',
+      activeButton: "safeBladeButton",
+      isCartButton: false,
+      balisongsArrayAfterFiltration: safeBladeArray,
+      searchInputValue: ""
+    });
+  };
+
+  liveBladeFiltration = () => {
+    console.log("Live blade")
+    const liveBladeArray = balisongs.filter(item => item.typeOfKnife === "live blade")
+    console.log("liveBladeArray: ", liveBladeArray);
+    this.setState({
+      balisongsArray: liveBladeArray,
+      title: 'Колекція live blade балісонгів',
+      activeButton: "liveBladeButton",
+      isCartButton: false,
+      balisongsArrayAfterFiltration: liveBladeArray,
+      searchInputValue: ""
+    });
+  };
+
   cartFiltration = () => {
     console.log("Live blade")
     // const cartArray = balisongs.filter(item => item.typeOfKnife === "live blade")
@@ -211,8 +212,8 @@ liveBladeFiltration = () => {
       case "weight":
         //! за вагою
         this.state.isCartButton
-          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight.toLowerCase().includes(textInput.trim().toLowerCase()))
-          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight.toLowerCase().includes(textInput.trim().toLowerCase()));
+          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight <= Number(textInput))
+          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight <= Number(textInput));
         break;
 
       default:
@@ -220,13 +221,23 @@ liveBladeFiltration = () => {
     }
 
     this.state.isCartButton
-      ? this.setState({
-        selectedKnifesObjects: onlyInputSearchValue,
-        // searchInputValue: event.target.value
-      })
-      : this.setState({
+      ?
+      //  onlyInputSearchValue.length === 0
+      //   ? this.setState({
+      //     selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
+      //   })
+      //   : 
+        this.setState({
+          selectedKnifesObjects: onlyInputSearchValue,
+        })
+      // : 
+      // onlyInputSearchValue.length === 0 ?
+      // this.setState({
+      //   balisongsArray: balisongs,
+      //   onlyInputSearchValue,
+      // })
+     : this.setState({
         balisongsArray: onlyInputSearchValue,
-        // searchInputValue: event.target.value
       })
   }
 
@@ -263,7 +274,7 @@ liveBladeFiltration = () => {
     //       ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
     //       : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
     //     break;
-      
+
     //   case "price":
     //     //! за ціною
     //     this.state.isCartButton
@@ -291,7 +302,7 @@ liveBladeFiltration = () => {
 
     // console.log("✅onlyInputSearchValue: ", onlyInputSearchValue);
 
-   
+
   }
 
   componentWillUnmount() {
@@ -338,7 +349,7 @@ liveBladeFiltration = () => {
 
   }
 
-   getBladeType = bladeType => {
+  getBladeType = bladeType => {
     console.log("Сюди приходить масив bladeType:", bladeType);
     //todo  при виборі масштабу потрібно аналізувати стан фільтрів та згідно з обраного фільтру брати необхідний масив для подальшої роботи
 
@@ -346,7 +357,7 @@ liveBladeFiltration = () => {
 
     switch (this.state.activeButton) {
       case "allButton":
-          result = bladeType
+        result = bladeType
         break;
 
       case "safeBladeButton":
@@ -356,29 +367,31 @@ liveBladeFiltration = () => {
       case "liveBladeButton":
         result = bladeType.filter(item => item.typeOfKnife === "live blade")
         break;
-      }
+    }
 
-      this.setState({
+    this.setState({
       balisongsBladeType: bladeType,
       balisongsArray: result,
       balisongsArrayAfterFiltration: result,
       searchInputValue: ""
     })
   }
-  
-  
-  render( ) {
+
+
+  render() {
 
     const {
+      balisongsArray,
+      activeButton,
       selectedKnifesIndxs,
       selectedKnifesObjects,
-      activeButton,
-      balisongsArray,
       isCartButton,
+      selectedKnifesObjectsAfterFiltration,
+      balisongsArrayAfterFiltration,
       searchInputValue,
       radioButtonValue,
       inputSearchPlaceholder,
-      selectedKnifesObjectsAfterFiltration
+      onlyInputSearchValue
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
@@ -409,46 +422,51 @@ liveBladeFiltration = () => {
     console.log("radioButtonValue: ", radioButtonValue);
     console.log("inputSearchPlaceholder: ", inputSearchPlaceholder);
     console.log("selectedKnifesObjectsAfterFiltration: ", selectedKnifesObjectsAfterFiltration);
+    console.log("balisongsArrayAfterFiltration: ", balisongsArrayAfterFiltration);
+     console.log("onlyInputSearchValue: ", onlyInputSearchValue);
+  
     console.log("------------------------------------------------------------");
-    
-  return(
-    <>
-      <Filter
-        onAll={this.allFiltration}
-        onSafeBlade={this.safeBladeFiltration}
-        onLiveBlade={this.liveBladeFiltration}
-        onCart={this.cartFiltration}
-        selectedLength={selectedKnifesObjects.length}
-        activeButton={activeButton}
-      />
 
-      <Select
-      onGetBladeType={this.getBladeType}
-       />
-      {isCartButton && totalTypes === 0 ? null
-      : <Sorter
+    return (
+      <>
+        <Filter
+          onAll={this.allFiltration}
+          onSafeBlade={this.safeBladeFiltration}
+          onLiveBlade={this.liveBladeFiltration}
+          onCart={this.cartFiltration}
+          selectedLength={selectedKnifesObjects.length}
+          activeButton={activeButton}
+        />
+
+        <Select
+          onGetBladeType={this.getBladeType}
+        />
+        {/* {isCartButton && totalTypes === 0 ? null
+          : */}
+        <Sorter
           onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
           searchInputValue={searchInputValue}
           onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
           radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
           inputSearchPlaceholder={inputSearchPlaceholder}
         />
-      }
-      <Section
-        title={this.state.title}
-        selectedKnifesObjects={selectedKnifesObjects}
-        isCartButton={isCartButton}
-        totalTypes={totalTypes}
-        totalModels={totalModels}
-      >
-        <BalisongList
-          items={isCartButton ? selectedKnifesObjects : balisongsArray}
-          onActive={this.ActiveButton}
-          selectedKnifesIndxs={selectedKnifesIndxs}
+        {/* } */}
+        <Section
+          title={this.state.title}
+          selectedKnifesObjects={selectedKnifesObjects}
+          isCartButton={isCartButton}
           totalTypes={totalTypes}
-        />
-      </Section>
-    </>
-  )
-}
+          totalModels={totalModels}
+          searchInputValue={searchInputValue}
+        >
+          <BalisongList
+            items={isCartButton ? selectedKnifesObjects : balisongsArray}
+            onActive={this.ActiveButton}
+            selectedKnifesIndxs={selectedKnifesIndxs}
+            totalTypes={totalTypes}
+          />
+        </Section>
+      </>
+    )
+  }
 }
