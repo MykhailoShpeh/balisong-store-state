@@ -222,20 +222,20 @@ export class App extends Component {
 
     this.state.isCartButton
       ?
-      //  onlyInputSearchValue.length === 0
-      //   ? this.setState({
-      //     selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
-      //   })
-      //   : 
+       onlyInputSearchValue.length === 0
+        ? this.setState({
+          selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
+        })
+        : 
         this.setState({
           selectedKnifesObjects: onlyInputSearchValue,
         })
-      // : 
-      // onlyInputSearchValue.length === 0 ?
-      // this.setState({
-      //   balisongsArray: balisongs,
-      //   onlyInputSearchValue,
-      // })
+      : 
+      onlyInputSearchValue.length === 0 ?
+      this.setState({
+        balisongsArray: balisongs,
+        onlyInputSearchValue,
+      })
      : this.setState({
         balisongsArray: onlyInputSearchValue,
       })
