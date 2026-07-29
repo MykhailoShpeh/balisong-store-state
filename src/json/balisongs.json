@@ -25,7 +25,7 @@
             "CK-SR/DLC": 999
         }
     },
-    {   
+    {
         "id": "002",
         "nameOfKnife": "TOUCH TIMES Kraken V3 Trainer Clone",
         "brand": "Balisong Butterfly Knife Store",
@@ -112,7 +112,7 @@
             "Hardened 420 stainless steel"
         ],
         "link": "https://glidr.co/collections/moab-x-meridian/products/moab-x-meridian-purple-rain",
-        "weight":114,
+        "weight": 114,
         "accessories": "Secondary parts",
         "photos": [
             "/balisong-store-state/photos/moab-meridian/moab-meridian.webp",
@@ -271,28 +271,79 @@
     },
     {
         "id": "012",
-        "nameOfKnife": "Titanium Krake Raken Damascus",
+        "nameOfKnife": "Marble Nautilus Trainer",
         "brand": "Squid Industries",
-        "price": 670,
-        "typeOfKnife": "live blade",
-        "image": "/balisong-store-state/damascus-tanto.webp",
+        "price": 265,
+        "typeOfKnife": "trainer",
+        "image": "/balisong-store-state/marble-blue-nautilus.webp",
         "materials": [
-            "6AL-4V Handles,",
-            "titanium,",
-            "7075 Aluminum"
+            "7075 T651  Aluminum Alloy, G-10 fiberglass laminate Handles,",
+            "Blade Material 410 Heat Treated Stainless Steel"
         ],
-        "link": "https://squidindustriesknives.co/products/damascus-ti-krake-raken-v3",
+        "link": "https://www.squidindustries.co/products/marble-nautilus-v2?variant=46282363928748",
         "weight": 122,
         "accessories": "",
         "photos": [
-            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken.webp",
-            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken-2.webp",
-            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken-3.webp",
-            "/balisong-store-state/photos/titanium-krake-raken-damascus/titanium-krake-raken-4.webp"
+            "/balisong-store-state/photos/marble-nautilus-trainer/MarbleBlueNautilusISO.webp",
+            "/balisong-store-state/photos/marble-nautilus-trainer/MarbleBlackNautilus.webp",
+            "/balisong-store-state/photos/marble-nautilus-trainer/MarbleSageNautilus.webp",
+            "/balisong-store-state/photos/marble-nautilus-trainer/MarbleSageNautilusISO.webp"
         ],
         "model": {
-            "Tanto": 999
+            "Marble Sage": 999,
+            "Marble Blue": 999,
+            "Marble Black": 999
+        }
+    },
+    {
+        "id": "013",
+        "nameOfKnife": "Orion V2 Live",
+        "brand": "LDY Balisong",
+        "price": 100,
+        "typeOfKnife": "live blade",
+        "image": "/balisong-store-state/orion.webp",
+        "materials": [
+            "Aluminium"
+        ],
+        "link": "https://ldybalisong.net/products/orion-v2-live?variant=52730722156825",
+        "weight": 115,
+        "accessories": "",
+        "photos": [
+            "/balisong-store-state/photos/orion-v2-live/orion-1.webp",
+            "/balisong-store-state/photos/orion-v2-live/orion-2.webp",
+            "/balisong-store-state/photos/orion-v2-live/orion-3.webp",
+            "/balisong-store-state/photos/orion-v2-live/orion-4.webp"
+        ],
+        "model": {
+            "Black": 999,
+            "Purple": 999,
+            "Cyan": 999
+        }
+    },
+    {
+        "id": "014",
+        "nameOfKnife": "Zenith Trainer 2.0 - Slick Silver",
+        "brand": "Flytanium",
+        "price": 69.95,
+        "typeOfKnife": "trainer",
+        "image": "/balisong-store-state/zenith-trainer.webp",
+        "materials": [
+            "7075 Milled Aluminum Handles,",
+            "Blade Material: 410 Heat Treated Stainless Steel"
+        ],
+        "link": "https://www.flytanium.com/products/zenith-trainer-2-0-slick-silver",
+        "weight": 118,
+        "accessories": "Extra Washers and Pivot Hardware in Box, bite edge indicator",
+        "photos": [
+            "/balisong-store-state/photos/zenith-trainer/zenith-1.webp",
+            "/balisong-store-state/photos/zenith-trainer/zenith-2.webp",
+            "/balisong-store-state/photos/zenith-trainer/zenith-3.webp",
+            "/balisong-store-state/photos/zenith-trainer/zenith-4.webp"
+        ],
+        "model": {
+            "Black": 999,
+            "Purple": 999,
+            "Cyan": 999
         }
     }
-    
 ]
