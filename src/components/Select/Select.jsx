@@ -23,15 +23,12 @@ export class Select extends Component {
         } = this.props;
 
         //!! const modelsSelectedScale = value == "all"
-        //     ? aircrafts
-        //     : aircrafts.filter(aircraft => aircraft.model.scale.some(item =>
-        //         item === Number(value)))
 
         const bladeType = value === "all"
             ? balisongs
             : balisongs.filter(item => item.typeOfKnife === value)
 
-            console.log("Тут створюється масив bladeType:", bladeType);
+        console.log("Тут створюється масив bladeType:", bladeType);
 
         // //! Зберігаємо значення інпутів в state
         this.setState({
@@ -48,26 +45,34 @@ export class Select extends Component {
             typeOfBlade,
         } = this.state
 
+        const brands = [...new Set(balisongs.map(item => item.brand))];
+
         console.log("-----------------------------------------------");
         console.log("typeOfBlade: ", typeOfBlade)
-       
+        console.log("📗brands: ", brands)
+
         console.log("-----------------------------------------------");
 
         return (
             <div>
-                <h3 className={css.title}>Оберіть тип леза ножа:</h3>
-            <label>
+                <h3 className={css.title}>Оберіть компанію виробника ножа:</h3>
+                <label>
                     <select
-                        name="typeOfBlade" 
+                        name="typeOfBlade"
                         className={css.select}
                         value={typeOfBlade}
                         onChange={this.handleChange}
-                        
+
                     >
                         <option value="all">Всі</option>
-                        <option value="trainer">Тренувальне</option>
-                        <option value="live blade">Небезпечне</option>
-                    </select> 
+                        {/* <option value="trainer">Тренувальне</option>
+                        <option value="live blade">Небезпечне</option> */}
+                        {brands.map((brand) => (
+                            <option value={brand}>
+                                {brand}
+                            </option>
+                        ))}
+                    </select>
                 </label>
             </div>
         )

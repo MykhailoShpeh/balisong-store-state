@@ -198,9 +198,14 @@ export class App extends Component {
       case "price":
         //! за ціною
         this.state.isCartButton
-          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.price <= Number(textInput))
-          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price <= Number(textInput));
+          ? textInput === ""
+            ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration
+            : onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.price <= Number(textInput))
+          : textInput === ""
+            ? onlyInputSearchValue = this.state.balisongsArrayAfterFiltration
+            : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price <= Number(textInput));
         break;
+
 
       // case "typeOfBlade":
       //   //    //! за типом леза
@@ -212,8 +217,12 @@ export class App extends Component {
       case "weight":
         //! за вагою
         this.state.isCartButton
-          ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight <= Number(textInput))
-          : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight <= Number(textInput));
+          ? textInput === ""
+            ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration
+            : onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.weight <= Number(textInput))
+          : textInput === ""
+            ? onlyInputSearchValue = this.state.balisongsArrayAfterFiltration
+            : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.weight <= Number(textInput));
         break;
 
       default:
@@ -221,22 +230,10 @@ export class App extends Component {
     }
 
     this.state.isCartButton
-      ?
-       onlyInputSearchValue.length === 0
-        ? this.setState({
-          selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
-        })
-        : 
-        this.setState({
-          selectedKnifesObjects: onlyInputSearchValue,
-        })
-      : 
-      onlyInputSearchValue.length === 0 ?
-      this.setState({
-        balisongsArray: balisongs,
-        onlyInputSearchValue,
+      ? this.setState({
+        selectedKnifesObjects: onlyInputSearchValue,
       })
-     : this.setState({
+      : this.setState({
         balisongsArray: onlyInputSearchValue,
       })
   }
@@ -423,8 +420,8 @@ export class App extends Component {
     console.log("inputSearchPlaceholder: ", inputSearchPlaceholder);
     console.log("selectedKnifesObjectsAfterFiltration: ", selectedKnifesObjectsAfterFiltration);
     console.log("balisongsArrayAfterFiltration: ", balisongsArrayAfterFiltration);
-     console.log("onlyInputSearchValue: ", onlyInputSearchValue);
-  
+    console.log("onlyInputSearchValue: ", onlyInputSearchValue);
+    console.log("📕Number з пустим рядком: ", Number(''));
     console.log("------------------------------------------------------------");
 
     return (
