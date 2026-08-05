@@ -7,7 +7,7 @@ import css from './Select.module.css';
 export class Select extends Component {
 
     state = {
-        typeOfBlade: "all"
+        typeOfBrand: "all"
     }
 
     handleChange = event => {
@@ -19,16 +19,16 @@ export class Select extends Component {
 
         //! Деструктуризуємо props:
         const {
-            onGetBladeType
+            onGetmanufactor
         } = this.props;
 
         //!! const modelsSelectedScale = value == "all"
 
-        const bladeType = value === "all"
+        const manufactor = value === "all"
             ? balisongs
-            : balisongs.filter(item => item.typeOfKnife === value)
+            : balisongs.filter(item => item.brand === value)
 
-        console.log("Тут створюється масив bladeType:", bladeType);
+        console.log("Тут створюється масив manufactor:", manufactor);
 
         // //! Зберігаємо значення інпутів в state
         this.setState({
@@ -36,20 +36,20 @@ export class Select extends Component {
             [name]: value,
         });
 
-        onGetBladeType(bladeType);
+        onGetmanufactor(manufactor);
     }
 
     render() {
 
         const {
-            typeOfBlade,
+            typeOfBrand,
         } = this.state
 
         const brands = [...new Set(balisongs.map(item => item.brand))];
 
         console.log("-----------------------------------------------");
-        console.log("typeOfBlade: ", typeOfBlade)
-        console.log("📗brands: ", brands)
+        console.log("typeOfBrand: ", typeOfBrand)
+        // console.log("📗brands: ", brands)
 
         console.log("-----------------------------------------------");
 
@@ -58,9 +58,9 @@ export class Select extends Component {
                 <h3 className={css.title}>Оберіть компанію виробника ножа:</h3>
                 <label>
                     <select
-                        name="typeOfBlade"
+                        name="typeOfBrand"
                         className={css.select}
-                        value={typeOfBlade}
+                        value={typeOfBrand}
                         onChange={this.handleChange}
 
                     >
@@ -68,7 +68,7 @@ export class Select extends Component {
                         {/* <option value="trainer">Тренувальне</option>
                         <option value="live blade">Небезпечне</option> */}
                         {brands.map((brand) => (
-                            <option value={brand}>
+                            <option key={brand} value={brand}>
                                 {brand}
                             </option>
                         ))}

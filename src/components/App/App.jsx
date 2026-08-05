@@ -59,7 +59,7 @@ export class App extends Component {
     searchInputValue: "", //! значення пошукового інпуту
     radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
     inputSearchPlaceholder: "Введіть назву ножа", //! значення placeholder для inputSearch
-    balisongsBladeType: balisongs,
+    balisongsmanufactor: balisongs,
     onlyInputSearchValue: []
   }
 
@@ -346,28 +346,15 @@ export class App extends Component {
 
   }
 
-  getBladeType = bladeType => {
-    console.log("Сюди приходить масив bladeType:", bladeType);
+  getmanufactor = manufactor => {
+    console.log("Сюди приходить масив manufactor:", manufactor);
     //todo  при виборі масштабу потрібно аналізувати стан фільтрів та згідно з обраного фільтру брати необхідний масив для подальшої роботи
 
     let result = [];
-
-    switch (this.state.activeButton) {
-      case "allButton":
-        result = bladeType
-        break;
-
-      case "safeBladeButton":
-        result = bladeType.filter(item => item.typeOfKnife === "trainer")
-        break;
-
-      case "liveBladeButton":
-        result = bladeType.filter(item => item.typeOfKnife === "live blade")
-        break;
-    }
+    result = manufactor;
 
     this.setState({
-      balisongsBladeType: bladeType,
+      balisongsmanufactor: manufactor,
       balisongsArray: result,
       balisongsArrayAfterFiltration: result,
       searchInputValue: ""
@@ -436,7 +423,7 @@ export class App extends Component {
         />
 
         <Select
-          onGetBladeType={this.getBladeType}
+          onGetmanufactor={this.getmanufactor}
         />
         {/* {isCartButton && totalTypes === 0 ? null
           : */}
