@@ -1,6 +1,6 @@
 .searchTitle {
     font-size: 1.6rem;
-    color: rgb(156, 156, 245);
+    color: #e2f7ff;
     align-self: center;
 }
 
@@ -19,11 +19,12 @@
 .card {
     max-width: 480px;
     /* width: 100%; */
-    background: #414149;
+    background: #252525;
     color: #e0e0e0;
     position: relative;
-    border: 1px solid rgba(202, 60, 155, 0.35);
-    border-radius: 14px;
+    /* border: 1px solid rgba(202, 60, 155, 0.35); */
+    border: 1px solid #252525;
+    /* border-radius: 14px; */
 
     padding: 15px;
     text-align: center;
@@ -40,7 +41,7 @@
     width: 100%;
     height: 220px;
     object-fit: contain;
-    background: #2a2a32;
+    background: #1c1c20;
     border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;

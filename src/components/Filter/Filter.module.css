@@ -3,7 +3,7 @@
     height: 80px;
     top: 0;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     /* background: transparent; */
     display: flex;
     justify-content: center;
@@ -18,8 +18,8 @@
     border-radius: 12px;
     border: 1px solid rgba(100, 190, 255, 0.3);
 
-    background: #2e2e2e;
-    color: #c3e1f1;
+    background: #252525;
+    color: #e2f7ff;
 
     cursor: pointer;
 
@@ -44,5 +44,5 @@
 }
 
 .active {
-    outline: 1px #82d7f1 solid;
+    outline: 1px #aee8fa solid;
 }

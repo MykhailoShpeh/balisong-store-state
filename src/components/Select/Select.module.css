@@ -1,5 +1,5 @@
 .title {
-    color: #c4e9f6;
+    /* color: #c4e9f6; */
 }
 
 .select {
@@ -7,10 +7,10 @@
   padding: 12px 16px;
   padding-right: 40px;
 
-  background-color: #2e2e2e;
+  background-color: #252525;
   color: #F5F7FA;
 
-  border: 2px solid #ca3c9b;
+  /* border: 2px solid #ca3c9b; */
   border-radius: 12px;
 
   font-size: 16px;

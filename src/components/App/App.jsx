@@ -1,18 +1,10 @@
-import { Section } from "@/components/Section/Section.jsx";
-
-// import { Balisong } from '@/components/Balisong/Balisong.jsx';
-
 import React, { Component } from "react";
+
+import { Section } from "@/components/Section/Section.jsx";
 
 import { BalisongList } from '@/components/BalisongList/BalisongList.jsx';
 
-// import balisong from '@/json/balisong.json';
-
-// import liveblade from '@/json/liveblade.json';
-
 import balisongs from '@/json/balisongs.json';
-
-import css from './App.module.css';
 
 import { Filter } from '@/components/Filter/Filter.jsx';
 
@@ -22,8 +14,11 @@ import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
 import { Sorter } from '@/components/Sorter/Sorter.jsx';
 
+import { Sidemenu } from '@/components/Sidemenu/Sidemenu.jsx'
+
 import debounce from "lodash.debounce";
 
+import css from './App.module.css';
 
 // //! Сортування, в якому моделі, яких немає в наявності знаходяться в кінці списку
 // console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -421,6 +416,8 @@ export class App extends Component {
           selectedLength={selectedKnifesObjects.length}
           activeButton={activeButton}
         />
+
+        {/* <Sidemenu /> */}
 
         <Select
           onGetmanufactor={this.getmanufactor}

@@ -10,7 +10,7 @@
 }
 
 .title {
-    color: #c4e9f6;
+    /* color: #e2f7ff; */
     text-align: center;
 }
 
@@ -20,7 +20,7 @@
     color: #e0d1f3;
     align-self: center;
     background: transparent;
-    border: 1px solid #da4396c2;
+    border: 1px solid #424141c2;
     border-radius: 12px;
     outline: none;
 }
@@ -49,9 +49,10 @@
 .form {
     display: flex;
     position: relative;
-    background: #2e2e2e;
-    border: 2px solid #76877D;
-    border-radius: 3rem;
+    background: #252525;
+    /* border: 2px solid #76877D; */
+    /* border-radius: 3rem; */
+    /* border-radius: 4px; */
     padding: 0.5rem;
     gap: 1rem;
     width: fit-content;
