@@ -417,21 +417,18 @@ export class App extends Component {
           activeButton={activeButton}
         />
 
-        {/* <Sidemenu /> */}
-
-        <Select
-          onGetmanufactor={this.getmanufactor}
-        />
-        {/* {isCartButton && totalTypes === 0 ? null
-          : */}
-        <Sorter
+        <Sidemenu>
+          <Select
+            onGetmanufactor={this.getmanufactor}
+          />
+          <Sorter
           onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
           searchInputValue={searchInputValue}
           onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
           radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
           inputSearchPlaceholder={inputSearchPlaceholder}
         />
-        {/* } */}
+        </Sidemenu>
         <Section
           title={this.state.title}
           selectedKnifesObjects={selectedKnifesObjects}

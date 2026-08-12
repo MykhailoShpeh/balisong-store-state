@@ -1,3 +1,11 @@
+.title {
+   color: #e2f7ff;
+}
+
+.toggleButton {
+  color: #e2f7ff;
+}
+
 .sideMenu {
   position: fixed;
   top: 0;
