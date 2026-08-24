@@ -16,8 +16,8 @@
   /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
   /* #2E2C2C */
-  background-color: #151515;
-
+  /* background-color: #151515; */
+background-color: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -39,8 +39,6 @@ a:hover {
 
 body {
   margin: 0;
-  /* display: flex;
-  place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -52,13 +50,13 @@ h1 {
 
 button {
   
-  border-radius: 8px;
+  border-radius: 980px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #252525;
+  background-color: rgba(22, 119, 172);
   cursor: pointer;
   transition: border-color 0.25s;
 }

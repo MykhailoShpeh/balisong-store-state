@@ -1,9 +1,15 @@
 .title {
-   color: #e2f7ff;
+   /* color: #e2f7ff;
+    */
+        color: #00385d;
+
 }
 
 .toggleButton {
-  color: #e2f7ff;
+  /* color: #e2f7ff; */
+  color: rgba(22, 119, 172);
+  background-color: transparent;
+  border: 1px solid rgba(22, 119, 172);
 }
 
 .sideMenu {

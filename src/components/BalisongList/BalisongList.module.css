@@ -9,9 +9,10 @@
     grid-template-columns: repeat(auto-fit, 320px);
     justify-content: center;
     gap: 24px;
-
+    background: rgba(245, 245, 247, .8);
     list-style: none;
     padding: 0;
+    padding-top: 30px;
     margin: 0;
 }
 
@@ -19,12 +20,15 @@
 .card {
     max-width: 480px;
     /* width: 100%; */
-    background: #252525;
-    color: #e0e0e0;
+    /* background: #252525; */
+    background: #fefefe;
+    /* color: #e1e0e0; */
+    color: rgba(0, 0, 0, .8);
     position: relative;
     /* border: 1px solid rgba(202, 60, 155, 0.35); */
-    border: 1px solid #252525;
-    /* border-radius: 14px; */
+    /* border: 1px solid #252525; */
+        border: 1px solid #f2f2f2;
+    border-radius: 4px;
 
     padding: 15px;
     text-align: center;
