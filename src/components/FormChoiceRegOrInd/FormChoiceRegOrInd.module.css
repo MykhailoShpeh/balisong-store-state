@@ -1,0 +1,30 @@
+.box {
+
+}
+
+.title {
+color: black;
+}
+
+/*! Кнопка Registration */
+.buttonRegistration {
+    background-color: #009688;
+}
+
+/*! Кнопка Login */
+.buttonLogin {
+    background-color: #b9a900;
+}
+
+.buttonRegistrationIdentification.buttonLogin:hover {
+    background-color: #9a9d00;
+}
+
+/*! Кнопка Cancel */
+.buttonCancel {
+    background-color: #d32f2f;
+}
+
+.buttonRegistrationIdentification.buttonCancel:hover {
+    background-color: #b71c1c;
+}

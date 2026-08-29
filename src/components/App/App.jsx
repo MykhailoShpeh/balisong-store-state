@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import { ModalRegistrationIdentification } from '@/components/ModalRegistrationIdentification/ModalRegistrationIdentification.jsx';
+
+import {FormChoiceRegOrInd} from '@/components/FormChoiceRegOrInd/FormChoiceRegOrInd.jsx';
+
 import { Section } from "@/components/Section/Section.jsx";
 
 import { BalisongList } from '@/components/BalisongList/BalisongList.jsx';
@@ -14,7 +18,9 @@ import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
 import { Sorter } from '@/components/Sorter/Sorter.jsx';
 
-import { Sidemenu } from '@/components/Sidemenu/Sidemenu.jsx'
+import { Sidemenu } from '@/components/Sidemenu/Sidemenu.jsx';
+
+import { Footer } from '@/components/Footer/Footer.jsx';
 
 import debounce from "lodash.debounce";
 
@@ -55,7 +61,13 @@ export class App extends Component {
     radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
     inputSearchPlaceholder: "Введіть назву ножа", //! значення placeholder для inputSearch
     balisongsmanufactor: balisongs,
-    onlyInputSearchValue: []
+    onlyInputSearchValue: [], //! значення пошукового інпута
+
+    showModal: true,
+    modalType: "",
+    // users: JSON.parse(localStorage.getItem("users")) || [],
+    // activeUser: null, //! 🗣 активний (авторизований) користувач
+    // activeUserId: null, //! #️⃣🗣 індекс Активного (авторизованого) користувача 
   }
 
 
@@ -65,6 +77,8 @@ export class App extends Component {
     if (!saved) {
       localStorage.setItem("selectedKnifesIndxs", JSON.stringify([]));
     }
+
+
   };
 
   //! 3.localStorage - Оновлення(синхронізація) localStorage при кожній зміні indicesSelectedModels
@@ -356,6 +370,36 @@ export class App extends Component {
     })
   }
 
+toggleModal = (event) => {
+    console.log("🌀toggleModal", event);
+    // console.log("🌀toggleModal", event.currentTarget.textContent);
+
+    const modalType = event ? event.currentTarget.textContent : undefined
+
+    console.log("modalType: ", modalType)
+
+    // this.setState({
+    //   modalType
+    // })
+
+    //! якщо modalType = Registration або Login, то нам потрібно:
+    //!  1. Залишити модалку відкритою
+    //! 2. this.state.modalType = modalType
+    //! якщо modalType != Registration або Login, то нам потрібно:
+    //! 1. Закрити модалу 
+    //! 2. this.state.modalType = ""
+
+    modalType === "Registration" || modalType === "Login"
+      ? this.setState({
+        showModal: true,
+        modalType
+      })
+      : this.setState(({ showModal }) => ({
+        showModal: !showModal,
+        modalType: ""
+      }))
+
+  }
 
   render() {
 
@@ -370,7 +414,8 @@ export class App extends Component {
       searchInputValue,
       radioButtonValue,
       inputSearchPlaceholder,
-      onlyInputSearchValue
+      onlyInputSearchValue,
+      showModal
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
@@ -408,6 +453,16 @@ export class App extends Component {
 
     return (
       <>
+        {
+        showModal &&
+        <ModalRegistrationIdentification
+        onClose={this.toggleModal}
+        >
+          <FormChoiceRegOrInd
+          onClose={this.toggleModal}
+           />
+           </ModalRegistrationIdentification>
+        }
         <Filter
           onAll={this.allFiltration}
           onSafeBlade={this.safeBladeFiltration}
@@ -416,18 +471,17 @@ export class App extends Component {
           selectedLength={selectedKnifesObjects.length}
           activeButton={activeButton}
         />
-
         <Sidemenu>
           <Select
             onGetmanufactor={this.getmanufactor}
           />
           <Sorter
-          onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
-          searchInputValue={searchInputValue}
-          onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
-          radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
-          inputSearchPlaceholder={inputSearchPlaceholder}
-        />
+            onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
+            searchInputValue={searchInputValue}
+            onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
+            radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
+            inputSearchPlaceholder={inputSearchPlaceholder}
+          />
         </Sidemenu>
         <Section
           title={this.state.title}
@@ -444,6 +498,7 @@ export class App extends Component {
             totalTypes={totalTypes}
           />
         </Section>
+        <Footer />
       </>
     )
   }

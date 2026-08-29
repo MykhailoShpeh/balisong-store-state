@@ -9,9 +9,9 @@ export function Sidemenu({
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <>
-
-            <h2 className={css.title}>Фільтри для пошуку ножів</h2>
+        <div className={css.sideMenuDiv}>
+         {/* <> */}
+            <h2 className={css.title} id="sideMenuTitle">Фільтри для пошуку ножів</h2>
             <button
                 type="button"
                 className={css.toggleButton}
@@ -30,6 +30,7 @@ export function Sidemenu({
                 </button>
                 {children}
             </aside>
-        </>
+        </div> 
+        //  </> 
     )
 };

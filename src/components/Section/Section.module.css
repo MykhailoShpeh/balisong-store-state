@@ -1,5 +1,13 @@
 section {
-    padding: 15px;
+    /* max-width: 1440px; */
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: rgba(245, 245, 247, .8);
+}
+
+.infoDiv {
+    /* max-width: 1440px; */
+    margin: 0 auto;
 }
 
 .nullTitle {
@@ -13,6 +21,7 @@ section {
         color: #00385d;
     margin: 0 auto;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .titleTotalTypes {

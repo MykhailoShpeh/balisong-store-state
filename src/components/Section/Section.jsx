@@ -18,11 +18,13 @@ export function Section({
                 {isOn && <section>
                     {/* <h2>{title}</h2> */}
                     {/* //! Рендер за умовою: */}
+                    <div className={css.infoDiv}>
                     {title && <h2 className={css.title}>{title}</h2>}
                     <h3 className={css.titleTotalTypes}>Кількість типів ножів: <span>{totalTypes}</span></h3>
                     <h3 className={css.titleTotalModels}>Кількість моделей ножів: <span>
                         {totalModels}
                     </span></h3>
+                    </div>
                     {children}
                 </section>}
             </>

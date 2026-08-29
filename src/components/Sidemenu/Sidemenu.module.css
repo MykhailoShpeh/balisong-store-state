@@ -1,8 +1,13 @@
+.sideMenuDiv {
+  /* max-width: 1440px; */
+  margin-bottom: 20px;
+}
+
 .title {
    /* color: #e2f7ff;
     */
         color: #00385d;
-
+  scroll-margin-top: 100px;
 }
 
 .toggleButton {
