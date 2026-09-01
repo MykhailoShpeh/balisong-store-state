@@ -1,12 +1,26 @@
 section {
-    /* max-width: 1440px; */
+    
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 20px 0px 20px 0px;
     background: rgba(245, 245, 247, .8);
+
+     width: 100%;
+  display: grid;
+
+  grid-template-areas:
+    "info info"
+    "content list";
+
+  grid-template-columns: 1fr 3fr;
+
+  gap: 24px;
+
+  /* background-color: dodgerblue; */
+  padding: 5px;
 }
 
 .infoDiv {
-    /* max-width: 1440px; */
+    
     margin: 0 auto;
 }
 
@@ -17,7 +31,7 @@ section {
 
 .title {
     width: 250px;
-    /* color: #e2f7ff; */
+    
         color: #00385d;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -34,4 +48,33 @@ section {
     color: #76877D;
     text-align: center;
         margin-bottom: 40px;
+}  
+
+.infoDiv {
+    width: 100%;
+  grid-area: info;
+
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  /* outline: 1px solid gray; */
+   border-radius: 12px;
+}
+
+.content {
+  grid-area: content;
+
+  background-color: white;
+  padding: 10px;
+  /* outline: 1px solid gray; */
+   border-radius: 12px;
+}
+
+.list {
+  grid-area: list;
+
+  background-color: white;
+  padding: 10px;
+  /* outline: 1px solid gray; */
+   border-radius: 12px;
 }

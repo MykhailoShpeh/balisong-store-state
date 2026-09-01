@@ -471,7 +471,7 @@ toggleModal = (event) => {
           selectedLength={selectedKnifesObjects.length}
           activeButton={activeButton}
         />
-        <Sidemenu>
+        {/* <Sidemenu>
           <Select
             onGetmanufactor={this.getmanufactor}
           />
@@ -482,7 +482,7 @@ toggleModal = (event) => {
             radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
             inputSearchPlaceholder={inputSearchPlaceholder}
           />
-        </Sidemenu>
+        </Sidemenu> */}
         <Section
           title={this.state.title}
           selectedKnifesObjects={selectedKnifesObjects}
@@ -490,6 +490,16 @@ toggleModal = (event) => {
           totalTypes={totalTypes}
           totalModels={totalModels}
           searchInputValue={searchInputValue}
+          select={ <Select onGetmanufactor={this.getmanufactor}/>}
+          sorter={
+             <Sorter
+            onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
+            searchInputValue={searchInputValue}
+            onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
+            radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
+            inputSearchPlaceholder={inputSearchPlaceholder}
+          />
+          }
         >
           <BalisongList
             items={isCartButton ? selectedKnifesObjects : balisongsArray}

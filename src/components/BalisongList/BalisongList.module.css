@@ -5,7 +5,7 @@
 }
 
 .list {
-    max-width: 1440px;
+    max-width: 3fr;
     display: grid;
     grid-template-columns: repeat(auto-fit, 320px);
     justify-content: center;

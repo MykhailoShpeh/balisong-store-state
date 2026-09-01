@@ -10,23 +10,35 @@ export function Section({
     isCartButton,
     totalTypes,
     totalModels,
-    searchInputValue
+    searchInputValue,
+    select,
+    sorter
 }) {
     return (
         selectedKnifesObjects.length == 0 && searchInputValue === "" && isCartButton ? <h1 className={css.nullTitle}>Додайте товар до кошику</h1> :
             <>
-                {isOn && <section>
-                    {/* <h2>{title}</h2> */}
-                    {/* //! Рендер за умовою: */}
-                    <div className={css.infoDiv}>
-                    {title && <h2 className={css.title}>{title}</h2>}
-                    <h3 className={css.titleTotalTypes}>Кількість типів ножів: <span>{totalTypes}</span></h3>
-                    <h3 className={css.titleTotalModels}>Кількість моделей ножів: <span>
-                        {totalModels}
-                    </span></h3>
-                    </div>
-                    {children}
-                </section>}
+                {isOn &&
+                    <section>
+                        {/* //! Рендер за умовою: */}
+                        <div className={css.infoDiv}>
+                            {title && <h2 className={css.title}>{title}</h2>}
+                            <h3 className={css.titleTotalTypes}>
+                                Кількість типів ножів: <span>{totalTypes}</span>
+                            </h3>
+                            <h3 className={css.titleTotalModels}>
+                                Кількість моделей ножів: <span>{totalModels}</span>
+                            </h3>
+                        </div>
+                        <div className={css.content}>
+                            <aside className={css.aside}>
+                                {select}
+                                {sorter}
+                            </aside>
+                        </div>
+                        <div className={css.list}>
+                            {children}
+                        </div>
+                    </section>}
             </>
     );
 }
