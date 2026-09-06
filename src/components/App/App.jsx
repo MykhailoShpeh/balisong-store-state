@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 import { ModalRegistrationIdentification } from '@/components/ModalRegistrationIdentification/ModalRegistrationIdentification.jsx';
 
-import {FormChoiceRegOrInd} from '@/components/FormChoiceRegOrInd/FormChoiceRegOrInd.jsx';
+import { FormChoiceRegOrInd } from '@/components/FormChoiceRegOrInd/FormChoiceRegOrInd.jsx';
+
+import { FormRegistration } from '@/components/FormRegistration/FormRegistration.jsx';
+
+import { FormIdentification } from '@/components/FormIdentification/FormIdentification.jsx'
 
 import { Section } from "@/components/Section/Section.jsx";
 
@@ -65,20 +69,39 @@ export class App extends Component {
 
     showModal: true,
     modalType: "",
-    // users: JSON.parse(localStorage.getItem("users")) || [],
-    // activeUser: null, //! 🗣 активний (авторизований) користувач
-    // activeUserId: null, //! #️⃣🗣 індекс Активного (авторизованого) користувача 
+    users: JSON.parse(localStorage.getItem("users")) || [],
+    activeUser: null, //! 🗣 активний (авторизований) користувач
+    activeUserId: null, //! #️⃣🗣 індекс Активного (авторизованого) користувача 
   }
 
-
-
   componentDidMount() {
-    const saved = localStorage.getItem("selectedKnifesIndxs");
-    if (!saved) {
-      localStorage.setItem("selectedKnifesIndxs", JSON.stringify([]));
+    let users = JSON.parse(localStorage.getItem("users"))
+    let activeUser = null;
+
+    if (!users) {
+      users = []
+      localStorage.setItem("users", JSON.stringify([]));
+
+    } else if (users.length > 0) {
+      activeUser = users.find(user => user.isActive === true) === undefined
+        ? null
+        : JSON.parse(localStorage.getItem("users")).find(user => user.isActive === true);
     }
 
+    console.log("activeUser: ", activeUser)
 
+    //! пошук id активного користувача
+    const activeUserId = users.findIndex(user => user.isActive === true) === -1
+      ? null
+      : users.findIndex(user => user.isActive === true)
+
+    console.log("activeUserId: ", activeUserId)
+
+    this.setState({
+      activeUser,
+      activeUserId,
+      showModal: activeUser ? false : true
+    })
   };
 
   //! 3.localStorage - Оновлення(синхронізація) localStorage при кожній зміні indicesSelectedModels
@@ -87,6 +110,13 @@ export class App extends Component {
       localStorage.setItem(
         "selectedKnifesIndxs",
         JSON.stringify(this.state.selectedKnifesIndxs)
+      );
+    }
+
+    if (prevState.users !== this.state.users) {
+      localStorage.setItem(
+        "users",
+        JSON.stringify(this.state.users)
       );
     }
   };
@@ -256,59 +286,17 @@ export class App extends Component {
   handleChangeInputSearchValue = event => {
     console.log("event: ", event)
     const inputData = event.target.value;
-    // let onlyInputSearchValue;
 
     this.state.isCartButton
       ? this.setState({
-        // selectedKnifesObjects: onlyInputSearchValue,
         searchInputValue: event.target.value
       })
       : this.setState({
-        // balisongsArray: onlyInputSearchValue,
         searchInputValue: event.target.value
       })
 
     this.debouncedSearch(inputData);
-
     console.log("inputData: ", inputData)
-    //todo Потрібно використати switch та при кожному значенні радіо кнопок використати перний case для їхньої фільтрації, case - фільтр що за певних умов фільтрує елементи
-
-    // switch (this.state.radioButtonValue) {
-    //   case "name":
-    //     //! за іменем
-    //     this.state.isCartButton
-    //       ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
-    //       : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.nameOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
-    //     break;
-
-    //   case "price":
-    //     //! за ціною
-    //     this.state.isCartButton
-    //       ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.price <= Number(inputData))
-    //       : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.price <= Number(inputData));
-    //     break;
-
-    //   case "typeOfBlade":
-    //     //    //! за типом леза
-    //     this.state.isCartButton
-    //       ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()))
-    //       : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => item.typeOfKnife.toLowerCase().startsWith(inputData.trim().toLowerCase()));
-    //     break;
-
-    //   case "weight":
-    //     //! за вагою
-    //     this.state.isCartButton
-    //       ? onlyInputSearchValue = this.state.selectedKnifesObjectsAfterFiltration.filter(item => Number(item.weight) <= Number(inputData))
-    //       : onlyInputSearchValue = this.state.balisongsArrayAfterFiltration.filter(item => Number(item.weight) <= Number(inputData));
-    //     break;
-
-    //   default:
-    //     console.log("Invalid");
-    // }
-
-    // console.log("✅onlyInputSearchValue: ", onlyInputSearchValue);
-
-
   }
 
   componentWillUnmount() {
@@ -330,10 +318,6 @@ export class App extends Component {
       case "price":
         placeHolder = "Введіть вартість ножа"
         break;
-
-      // case "typeOfBlade":
-      //   placeHolder = "Введіть тип леза ножа"
-      //   break;
 
       case "weight":
         placeHolder = "Введіть вагу ножа"
@@ -370,7 +354,7 @@ export class App extends Component {
     })
   }
 
-toggleModal = (event) => {
+  toggleModal = (event) => {
     console.log("🌀toggleModal", event);
     // console.log("🌀toggleModal", event.currentTarget.textContent);
 
@@ -401,6 +385,56 @@ toggleModal = (event) => {
 
   }
 
+  handleSubmit = (user) => {
+    this.setState(prevState => ({
+      users: [...prevState.users, user],
+
+      modalType: 'Login',
+    }))
+  }
+
+  handleLogIn = (user) => {
+    const users = JSON.parse(localStorage.getItem('users'));
+    console.log("users: ", users)
+    const activeUser = users.find(item => item.userEmail === user.userEmail)
+    console.log("❗️🗣 Активний (авторизований) користувач__accountLogin:", activeUser); //!
+
+    activeUser.isActive = true
+
+    const activeUserId = users.findIndex(user => user.isActive === true)
+
+    const selectedKnifesIndxs = activeUser.selectedKnifesIndxs
+
+    console.log("selectedKnifesIndxs: ", selectedKnifesIndxs)
+
+    localStorage.setItem(
+      "users",
+      JSON.stringify(users),
+    );
+
+    localStorage.setItem(
+      "selectedKnifesIndxs",
+      JSON.stringify(selectedKnifesIndxs)
+
+    )
+
+    console.log("users after: ", users)
+    //todo var.1
+    // this.setState({
+    //   showModal: false
+    // })
+
+    //todo var.2
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+      users,
+      activeUser,
+      activeUserId,
+      selectedKnifesObjects: selectedKnifesIndxs,
+      selectedModels: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => aircrafts.filter((el) => item === el.id))
+    }))
+  }
+
   render() {
 
     const {
@@ -415,7 +449,8 @@ toggleModal = (event) => {
       radioButtonValue,
       inputSearchPlaceholder,
       onlyInputSearchValue,
-      showModal
+      showModal,
+      modalType
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
@@ -428,11 +463,6 @@ toggleModal = (event) => {
           .filter(value => value > 0));
 
     const totalModels = totalModelsArray.length
-
-    // console.log("selectedKnifesIndxs: ", selectedKnifesIndxs);
-    // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
-
-    // const selectedKnifesObjects = updateSelectedModels(selectedKnifesIndxs,
 
     const totalTypes = isCartButton ? selectedKnifesObjects.length : balisongsArray.length;
 
@@ -454,14 +484,22 @@ toggleModal = (event) => {
     return (
       <>
         {
-        showModal &&
-        <ModalRegistrationIdentification
-        onClose={this.toggleModal}
-        >
-          <FormChoiceRegOrInd
-          onClose={this.toggleModal}
-           />
-           </ModalRegistrationIdentification>
+          showModal &&
+          <ModalRegistrationIdentification
+            onClose={this.toggleModal}
+          >
+            {!modalType &&
+              <FormChoiceRegOrInd onClose={this.toggleModal} />
+            }
+
+            {modalType == "Registration" &&
+              <FormRegistration onClose={this.toggleModal} onSubmit={this.handleSubmit} />
+            }
+
+            {modalType == "Login" &&
+              <FormIdentification onClose={this.toggleModal} onAccountLogin={this.handleLogIn} />
+            }
+          </ModalRegistrationIdentification>
         }
         <Filter
           onAll={this.allFiltration}
@@ -490,15 +528,15 @@ toggleModal = (event) => {
           totalTypes={totalTypes}
           totalModels={totalModels}
           searchInputValue={searchInputValue}
-          select={ <Select onGetmanufactor={this.getmanufactor}/>}
+          select={<Select onGetmanufactor={this.getmanufactor} />}
           sorter={
-             <Sorter
-            onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
-            searchInputValue={searchInputValue}
-            onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
-            radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
-            inputSearchPlaceholder={inputSearchPlaceholder}
-          />
+            <Sorter
+              onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
+              searchInputValue={searchInputValue}
+              onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
+              radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
+              inputSearchPlaceholder={inputSearchPlaceholder}
+            />
           }
         >
           <BalisongList

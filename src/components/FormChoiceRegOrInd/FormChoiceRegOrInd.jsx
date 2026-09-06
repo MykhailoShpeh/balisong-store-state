@@ -22,7 +22,6 @@ onClose
                     className={`${css.buttonRegistrationIdentification} ${css.buttonLogin}`}
                     // onClick={(event) => onClose(event.currentTarget.textContent)}
                     onClick={onClose}
-
                 >
                     Login
                 </button>
