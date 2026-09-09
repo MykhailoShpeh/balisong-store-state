@@ -6,7 +6,9 @@ import { FormChoiceRegOrInd } from '@/components/FormChoiceRegOrInd/FormChoiceRe
 
 import { FormRegistration } from '@/components/FormRegistration/FormRegistration.jsx';
 
-import { FormIdentification } from '@/components/FormIdentification/FormIdentification.jsx'
+import { FormIdentification } from '@/components/FormIdentification/FormIdentification.jsx';
+
+import { UserLogInOrReg } from '@/components/UserLogInOrReg/UserLogInOrReg.jsx'
 
 import { Section } from "@/components/Section/Section.jsx";
 
@@ -104,14 +106,24 @@ export class App extends Component {
     })
   };
 
-  //! 3.localStorage - Оновлення(синхронізація) localStorage при кожній зміні indicesSelectedModels
+  //! 3.localStorage - Оновлення(синхронізація) localStorage при кожній зміні selectedKnifesIndxs
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.selectedKnifesIndxs !== this.state.selectedKnifesIndxs) {
+    if (this.state.activeUser && (prevState.selectedKnifesIndxs !== this.state.selectedKnifesIndxs)) {
       localStorage.setItem(
         "selectedKnifesIndxs",
         JSON.stringify(this.state.selectedKnifesIndxs)
       );
-    }
+    
+    const users = JSON.parse(localStorage.getItem("users"))
+
+    users[this.state.activeUserId].selectedKnifesIndxs = this.state.selectedKnifesIndxs
+
+    localStorage.setItem(
+      "users",
+      JSON.stringify(users)
+    );
+
+  }
 
     if (prevState.users !== this.state.users) {
       localStorage.setItem(
@@ -431,8 +443,32 @@ export class App extends Component {
       activeUser,
       activeUserId,
       selectedKnifesObjects: selectedKnifesIndxs,
-      selectedModels: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => aircrafts.filter((el) => item === el.id))
+      selectedModels: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id))
     }))
+  }
+
+  handleSignOut = () => {
+    console.log("⬇️Sign Out");
+
+    const users = JSON.parse(localStorage.getItem("users"))
+
+    console.log("users ДО: ", users);
+
+    users[this.state.activeUserId].isActive = false
+
+    console.log("users Після: ", users);
+
+    localStorage.removeItem("selectedKnifesIndxs");
+
+    this.setState({
+      users,
+      activeUser: null,
+      activeUserId: null,
+      showModal: true,
+      modalType: "",
+      selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
+      selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [] //! масив індексів обраних моделей
+    })
   }
 
   render() {
@@ -450,7 +486,8 @@ export class App extends Component {
       inputSearchPlaceholder,
       onlyInputSearchValue,
       showModal,
-      modalType
+      modalType,
+      activeUser
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
@@ -508,7 +545,13 @@ export class App extends Component {
           onCart={this.cartFiltration}
           selectedLength={selectedKnifesObjects.length}
           activeButton={activeButton}
-        />
+        >
+          <UserLogInOrReg
+            onClose={this.toggleModal}
+            activeUser={activeUser}
+            onSignOut={this.handleSignOut}
+          />
+        </Filter>
         {/* <Sidemenu>
           <Select
             onGetmanufactor={this.getmanufactor}
@@ -544,6 +587,7 @@ export class App extends Component {
             onActive={this.ActiveButton}
             selectedKnifesIndxs={selectedKnifesIndxs}
             totalTypes={totalTypes}
+            activeUser={activeUser}
           />
         </Section>
         <Footer />

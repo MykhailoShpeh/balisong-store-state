@@ -10,7 +10,8 @@ export function BalisongList({
     items,
     onActive,
     selectedKnifesIndxs,
-    totalTypes
+    totalTypes,
+    activeUser
 }) {
     return (
         <>
@@ -36,6 +37,7 @@ export function BalisongList({
                             additionalPhotos={item.photos}
                             onActive={onActive}
                             selectedKnifesIndxs={selectedKnifesIndxs}
+                            activeUser
                         />
                     </li>
                 )}

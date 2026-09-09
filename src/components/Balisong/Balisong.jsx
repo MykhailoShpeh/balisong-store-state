@@ -39,6 +39,7 @@ export function Balisong({
     additionalPhotos = [template],
     onActive,
     selectedKnifesIndxs,
+    activeUser
 }) {
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
@@ -58,14 +59,14 @@ export function Balisong({
             }}
         >{isOpen ? "Згорнута інформація" : "Повна інформація"}</button>
         <div className={css.fullInfoDiv}>
-        <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
-        <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
-        <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price} USD</p>
-        <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
-        <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
-        <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
+            <p className={css.text}><FaTrademark size={iconSize.sm} /> Бренд: {brand}</p>
+            <p className={css.text}><GiButterflyKnife size={iconSize.sm} /> Тип леза: {typeOfKnife}</p>
+            <p className={css.text}><BsCurrencyDollar size={iconSize.sm} /> Ціна: {price} USD</p>
+            <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
+            <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
+            <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
 
-        {/* <div className={css.divImg}>
+            {/* <div className={css.divImg}>
             {additionalPhotos.map(item =>
                 <img
                     src={item}
@@ -75,20 +76,19 @@ export function Balisong({
             )}
         </div> */}
 
-        <Modal
-            images={additionalPhotos}
-            name={nameOfKnife}
-        />
+            <Modal
+                images={additionalPhotos}
+                name={nameOfKnife}
+            />
         </div>
         <button
-            
             className={additionalPhotos[0] === template
                 ? `${css.noInStock} ${css.cardButton} `
                 : selectedKnifesIndxs.includes(id)
                     ? `${css.cardButton}  ${css.deleteFromCart}`
                     : `${css.cardButton}`
-                }
-            disabled={additionalPhotos[0] === template}
+            }
+            disabled={(additionalPhotos[0] === template) || !activeUser}
             type='button'
             onClick={() => { onActive(id) }}
         >

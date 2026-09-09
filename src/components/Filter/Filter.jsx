@@ -6,7 +6,9 @@ export function Filter({
     onLiveBlade,
     onCart,
     selectedLength,
-    activeButton }) {
+    activeButton,
+    children
+ }) {
 return (
     <div
         className={css.filterBox}
@@ -46,6 +48,7 @@ return (
                 // className={css.cartSpan}
             >{null ? 0 : selectedLength}</span>
         </button>
+            {children}
     </div>
 )
 }
