@@ -118,6 +118,8 @@ export class App extends Component {
 
     users[this.state.activeUserId].selectedKnifesIndxs = this.state.selectedKnifesIndxs
 
+    console.log("📗 users: ", users);
+
     localStorage.setItem(
       "users",
       JSON.stringify(users)
@@ -206,6 +208,7 @@ export class App extends Component {
       idArray.splice(idArray.indexOf(id), 1);
       this.setState({
         selectedKnifesIndxs: idArray
+
       })
     }
     else {
@@ -515,7 +518,8 @@ export class App extends Component {
     console.log("selectedKnifesObjectsAfterFiltration: ", selectedKnifesObjectsAfterFiltration);
     console.log("balisongsArrayAfterFiltration: ", balisongsArrayAfterFiltration);
     console.log("onlyInputSearchValue: ", onlyInputSearchValue);
-    console.log("📕Number з пустим рядком: ", Number(''));
+    // console.log("📕Number з пустим рядком: ", Number(''));
+        console.log("activeUser: ", activeUser);
     console.log("------------------------------------------------------------");
 
     return (

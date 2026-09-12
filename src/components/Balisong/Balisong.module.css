@@ -53,3 +53,7 @@
 .deleteFromCart {
     background-color: #7bd3a0;
 }
+
+.cardButton:disabled {
+    background-color: gray;
+}

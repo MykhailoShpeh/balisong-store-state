@@ -37,7 +37,7 @@ export function BalisongList({
                             additionalPhotos={item.photos}
                             onActive={onActive}
                             selectedKnifesIndxs={selectedKnifesIndxs}
-                            activeUser
+                            activeUser={activeUser}
                         />
                     </li>
                 )}

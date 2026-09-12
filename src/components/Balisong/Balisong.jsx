@@ -43,6 +43,8 @@ export function Balisong({
 }) {
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
+    //  console.log("🇩🇪activeUser :", activeUser)
+
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -88,7 +90,10 @@ export function Balisong({
                     ? `${css.cardButton}  ${css.deleteFromCart}`
                     : `${css.cardButton}`
             }
-            disabled={(additionalPhotos[0] === template) || !activeUser}
+            disabled={
+                // additionalPhotos[0] === template ||
+                 !activeUser
+                }
             type='button'
             onClick={() => { onActive(id) }}
         >
