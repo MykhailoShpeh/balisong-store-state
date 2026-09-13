@@ -10,7 +10,8 @@
 }
 
 .title {
-    color: #e2f7ff;
+    /* color: #e2f7ff; */
+    color: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 

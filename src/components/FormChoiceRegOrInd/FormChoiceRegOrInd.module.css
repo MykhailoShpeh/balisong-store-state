@@ -1,9 +1,18 @@
 .box {
-
+    margin-top: 100px;
+    position: relative;
 }
 
 .title {
 color: black;
+}
+
+.registrationIdentificationButtonBox {
+     width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   margin: 0 auto;
 }
 
 /*! Кнопка Registration */
@@ -22,6 +31,9 @@ color: black;
 
 /*! Кнопка Cancel */
 .buttonCancel {
+    position: absolute;
+    top: -100px;
+    right: -90px;
     background-color: #d32f2f;
 }
 

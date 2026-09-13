@@ -25,14 +25,14 @@ onClose
                 >
                     Login
                 </button>
+                 </div>
                 <button
                     type="button"
                     className={`${css.buttonRegistrationIdentification} ${css.buttonCancel}`}
                     onClick={onClose}
                 >
-                    Cancel
+                    ✕
                 </button>
-            </div>
       </div>
     )
 }

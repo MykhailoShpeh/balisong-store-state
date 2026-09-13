@@ -1,5 +1,6 @@
 .title {
-    color: #c4e9f6;
+    /* color: #c4e9f6; */
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .select {
