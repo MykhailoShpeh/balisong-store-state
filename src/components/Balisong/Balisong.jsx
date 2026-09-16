@@ -44,6 +44,8 @@ export function Balisong({
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
     //  console.log("🇩🇪activeUser :", activeUser)
+     console.log("selectedKnifesIndxs :", selectedKnifesIndxs)
+
 
 
     const [isOpen, setIsOpen] = useState(false);

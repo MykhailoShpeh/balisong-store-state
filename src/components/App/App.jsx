@@ -445,7 +445,7 @@ export class App extends Component {
       users,
       activeUser,
       activeUserId,
-      selectedKnifesObjects: selectedKnifesIndxs,
+      selectedKnifesIndxs: selectedKnifesIndxs,
       selectedModels: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id))
     }))
   }
