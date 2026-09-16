@@ -12,7 +12,8 @@ export function Section({
     totalModels,
     searchInputValue,
     select,
-    sorter
+    sorter,
+    priceFilter
 }) {
     return (
         selectedKnifesObjects.length == 0 && searchInputValue === "" && isCartButton ? <h1 className={css.nullTitle}>Додайте товар до кошику</h1> :
@@ -33,6 +34,7 @@ export function Section({
                             <aside className={css.aside}>
                                 {select}
                                 {sorter}
+                                {priceFilter}
                             </aside>
                         </div>
                         <div className={css.list}>

@@ -1,0 +1,48 @@
+.priceFilterDiv {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+}
+
+.priceTitle {
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    margin: 0;
+}
+
+form {
+    width: 220px;
+ display: flex;
+justify-content: space-between;
+margin: 40px 0px 40px 0px;
+}
+
+.priceInput {
+    height: 30px;
+    width: 100px;
+    border: 1px solid rgba(110, 110, 110, 0.8);
+    border-radius: 4px;
+}
+
+.priceInput:focus {
+    border: none;
+outline: 1px solid rgb(0, 0, 0);
+}
+
+.priceInput::placeholder {
+    
+}
+
+.priceSpan {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.line {
+    width: 220px;
+    border: 1px solid rgba(110, 110, 110, 0.8);
+    margin: 0 auto;
+}

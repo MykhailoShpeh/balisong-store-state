@@ -111,19 +111,19 @@
 
 /*! Валідація інпутів */
 /*todo Підсвічування обов'язкових полів */
-input:required,
+/* input:required,
 select:required {
     border-left: 4px solid #ff9800;
-}
+} */
 
 /** Якщо поле заповнено коректно*/
-input:valid,
+/* input:valid,
 select:valid {
     border-color: #4caf50;
-}
+} */
 
 /*! Якщо поле заповнено неправильно */
-input:invalid,
+/* input:invalid,
 select:invalid {
     background-color: #fff5e5;
-}
+} */

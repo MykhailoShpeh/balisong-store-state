@@ -24,6 +24,8 @@ import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
 import { Sorter } from '@/components/Sorter/Sorter.jsx';
 
+import {PriceFilter} from '@/components/PriceFilter/PriceFilter.jsx'
+
 import { Sidemenu } from '@/components/Sidemenu/Sidemenu.jsx';
 
 import { Footer } from '@/components/Footer/Footer.jsx';
@@ -585,6 +587,7 @@ export class App extends Component {
               inputSearchPlaceholder={inputSearchPlaceholder}
             />
           }
+          priceFilter={<PriceFilter/>}
         >
           <BalisongList
             items={isCartButton ? selectedKnifesObjects : balisongsArray}
