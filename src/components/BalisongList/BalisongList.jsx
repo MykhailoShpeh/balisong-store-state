@@ -19,6 +19,13 @@ export function BalisongList({
                 totalTypes == 0
                     ? <h3 className={css.searchTitle}>Нічого не знайдено... 😔</h3>
                     :  <ul className={css.list}>
+                        <div className={css.optionsDiv}>
+                           <select className={css.optionsSelect}>
+                            <option value="">Від дешевших до дорожчих</option>
+                            <option value="">Від дорожчих до дешевших</option>
+                            <option value="">За популярністю</option>
+                           </select>
+                        </div>
             {items.map
                 ((item, index) =>
                     <li className={css.card} key={item.id}>

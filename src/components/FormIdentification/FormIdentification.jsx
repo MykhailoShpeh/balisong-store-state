@@ -104,11 +104,11 @@ export class FormIdentification extends Component {
 
         return (
             <>
-                <h2 className={css.titleFormIdentification}>Ідентифікація/Аутентифікація</h2>
                 <form
                     className={css.formIdentification}
                     onSubmit={this.handleSubmit}
                 >
+                    <h2 className={css.titleFormIdentification}>Увійдіть у свій аккаунт</h2>
                     <label className={css.labelFormIdentification}>
                         E-mail:
                         <input
@@ -144,7 +144,7 @@ export class FormIdentification extends Component {
                             type="button"
                             onClick={onClose}
                         >
-                            Cancel
+                            x
                         </button>
                     </div>
                 </form>

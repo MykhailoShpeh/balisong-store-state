@@ -99,11 +99,13 @@ export class FormRegistration extends Component {
 
         return (
             <>
-                <h2 className={css.titleFormRegistration}>Реєстрація</h2>
+                
                 <form
                     className={css.formRegistration}
                     onSubmit={this.handleSubmit}
                 >
+                    <h2 className={css.titleFormRegistration}>Створіть аккаунт</h2>
+
                     <label className={css.labelFormRegistration}>
                         Ім'я:
                         <input

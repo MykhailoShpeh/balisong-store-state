@@ -5,6 +5,7 @@
 }
 
 .list {
+    position: relative;
     max-width: 3fr;
     display: grid;
     grid-template-columns: repeat(auto-fit, 320px);
@@ -13,10 +14,57 @@
     /* background: rgba(245, 245, 247, .8); */
     list-style: none;
     padding: 0;
-    padding-top: 30px;
+    padding-top: 80px;
     margin: 0 auto;
 }
 
+.optionsDiv {
+position: absolute;
+top: 5px;
+right: 15px;
+}
+
+.optionsSelect {
+    width: 220px;
+    height: 44px;
+
+    padding: 0 38px 0 13px;
+
+    border: 1px solid #d5d9e0;
+    border-radius: 9px;
+
+    background-color: #ffffff;
+    color: #1a1f25;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.optionsSelect:hover {
+    border-color: #b8bec8;
+}
+
+.optionsSelect:focus {
+    border-color: #4f6d57;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 109, 87, 0.12);
+}
+
+.optionsSelect:disabled {
+    background-color: #f1f3f5;
+    color: #9aa1ab;
+    cursor: not-allowed;
+}
 
 .card {
     max-width: 480px;
