@@ -1,6 +1,10 @@
+.selectDiv {
+  margin-bottom: 30px;
+}
+
 .title {
-    /* color: #c4e9f6; */
-    color: rgba(0, 0, 0, 0.8);
+  /* color: #c4e9f6; */
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* .selectInput {
@@ -20,11 +24,11 @@
   padding: 12px 16px;
   padding-right: 40px;
 
-  background-color: #252525;
-  color: #F5F7FA;
+  border: 1px solid #d5d9e0;
+  border-radius: 9px;
 
-  /* border: 2px solid #ca3c9b; */
-  border-radius: 12px;
+  background-color: #ffffff;
+  color: #1a1f25;
 
   font-size: 16px;
   cursor: pointer;

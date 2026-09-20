@@ -1,85 +1,126 @@
 .sorter {
-    width: 100%;
-        /* position: fixed; */
-        /* top: 0;
-        z-index: 1; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        margin-bottom: 30px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
 }
 
 .title {
-    /* color: #e2f7ff; */
-    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+
+    color: #1a1f25;
+
+    font-size: 22px;
+    font-weight: 600;
     text-align: center;
 }
 
+
+/*! Пошук */
 .input {
     width: 250px;
-    height: 50px;
-    color: #e0d1f3;
-    align-self: center;
-    background: transparent;
-    border: 1px solid #424141c2;
-    border-radius: 12px;
+    height: 44px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    color: #1a1f25;
+    background: #ffffff;
+
+    border: 1px solid #d5d9e0;
+    border-radius: 9px;
+
     outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+    color: #9aa1ab;
+}
+
+.input:hover {
+    border-color: #b8bec8;
 }
 
 .input:focus {
-    animation: glow 2s linear infinite;
+    border-color: #4f6d57;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 109, 87, 0.12);
 }
 
-@keyframes glow {
-    0% {
-        border-color: #92F5F5;
-        box-shadow: 0 0 5px #92F5F5;
-    }
 
-    50% {
-        border-color: #DA4397;
-        box-shadow: 0 0 12px #DA4397;
-    }
-
-    100% {
-        border-color: #92F5F5;
-        box-shadow: 0 0 5px #92F5F5;
-    }
-}
-
+/*! Перемикач фільтрів */
 .form {
-    display: flex;
-    position: relative;
-    background: #252525;
-    /* border: 2px solid #76877D; */
-    /* border-radius: 3rem; */
-    /* border-radius: 4px; */
-    padding: 0.5rem;
-    gap: 1rem;
     width: fit-content;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+
+    background: #f1f3f5;
+    border: 1px solid #e1e4e8;
+    border-radius: 11px;
+
+    margin: 0 auto 10px;
+    overflow-x: auto;
 }
 
+
+/*! Приховані radio */
 .form input {
     display: none;
 }
 
-label {
+
+/*! Варіанти фільтра */
+.form label {
     position: relative;
-    padding: 0.6rem 1.5rem;
-    border-radius: 3rem;
+
+    padding: 9px 18px;
+
+    border-radius: 8px;
+
+    color: #667085;
+
+    font-size: 14px;
+    font-weight: 500;
+
     cursor: pointer;
-    font-weight: 600;
-    color: #ddd;
-    transition: color 0.3s ease-in-out;
+
     z-index: 2;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-label:hover {
-    color: #3cb9ca;
+
+/*! Hover */
+.form label:hover {
+    color: #1a1f25;
 }
 
-.active {
-    color: #ade4ff;
+
+/*! Активний фільтр */
+.form label.active {
+    color: #1a1f25;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 1px 4px rgba(30, 35, 50, 0.12);
 }

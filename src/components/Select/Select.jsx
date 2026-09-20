@@ -54,7 +54,7 @@ export class Select extends Component {
         console.log("-----------------------------------------------");
 
         return (
-            <div>
+            <div className={css.selectDiv}>
                 <h3 className={css.title}>Оберіть компанію виробника ножа:</h3>
                 {/* <input type="text" className={css.selectInput} placeholder="Пошук"/> */}
                 <label>
