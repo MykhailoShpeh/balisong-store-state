@@ -24,7 +24,7 @@ import { updateSelectedModels } from '@/utils/updatesSelectedModels.js';
 
 import { Sorter } from '@/components/Sorter/Sorter.jsx';
 
-import {PriceFilter} from '@/components/PriceFilter/PriceFilter.jsx'
+import { PriceFilter } from '@/components/PriceFilter/PriceFilter.jsx'
 
 import { Sidemenu } from '@/components/Sidemenu/Sidemenu.jsx';
 
@@ -70,7 +70,6 @@ export class App extends Component {
     inputSearchPlaceholder: "Введіть назву ножа", //! значення placeholder для inputSearch
     balisongsmanufactor: balisongs,
     onlyInputSearchValue: [], //! значення пошукового інпута
-
     showModal: true,
     modalType: "",
     users: JSON.parse(localStorage.getItem("users")) || [],
@@ -115,19 +114,23 @@ export class App extends Component {
         "selectedKnifesIndxs",
         JSON.stringify(this.state.selectedKnifesIndxs)
       );
-    
-    const users = JSON.parse(localStorage.getItem("users"))
 
-    users[this.state.activeUserId].selectedKnifesIndxs = this.state.selectedKnifesIndxs
+      const users = JSON.parse(localStorage.getItem("users"))
 
-    console.log("📗 users: ", users);
+      users[this.state.activeUserId].selectedKnifesIndxs = this.state.selectedKnifesIndxs
 
-    localStorage.setItem(
-      "users",
-      JSON.stringify(users)
-    );
+      console.log("📗 users: ", users);
 
-  }
+      localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+      );
+
+      this.setState({
+        selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)), //! //! масив обраних моделей
+      })
+
+    }
 
     if (prevState.users !== this.state.users) {
       localStorage.setItem(
@@ -521,7 +524,8 @@ export class App extends Component {
     console.log("balisongsArrayAfterFiltration: ", balisongsArrayAfterFiltration);
     console.log("onlyInputSearchValue: ", onlyInputSearchValue);
     // console.log("📕Number з пустим рядком: ", Number(''));
-        console.log("activeUser: ", activeUser);
+    console.log("activeUser: ", activeUser);
+
     console.log("------------------------------------------------------------");
 
     return (
@@ -549,7 +553,7 @@ export class App extends Component {
           onSafeBlade={this.safeBladeFiltration}
           onLiveBlade={this.liveBladeFiltration}
           onCart={this.cartFiltration}
-          selectedLength={selectedKnifesObjects.length}
+          selectedLength={selectedKnifesIndxs.length}
           activeButton={activeButton}
         >
           <UserLogInOrReg
@@ -587,7 +591,7 @@ export class App extends Component {
               inputSearchPlaceholder={inputSearchPlaceholder}
             />
           }
-          priceFilter={<PriceFilter/>}
+          priceFilter={<PriceFilter />}
         >
           <BalisongList
             items={isCartButton ? selectedKnifesObjects : balisongsArray}
