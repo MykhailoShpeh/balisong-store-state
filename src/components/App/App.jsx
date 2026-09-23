@@ -562,18 +562,6 @@ export class App extends Component {
             onSignOut={this.handleSignOut}
           />
         </Filter>
-        {/* <Sidemenu>
-          <Select
-            onGetmanufactor={this.getmanufactor}
-          />
-          <Sorter
-            onHandleChangeInputSearchValue={this.handleChangeInputSearchValue}
-            searchInputValue={searchInputValue}
-            onHandleChangeRadioButtonValue={this.handleChangeRadioButtonValue}
-            radioButtonValue={radioButtonValue} //! значення параметра для пошуку/фільтрації радіо-кнопки
-            inputSearchPlaceholder={inputSearchPlaceholder}
-          />
-        </Sidemenu> */}
         <Section
           title={this.state.title}
           selectedKnifesObjects={selectedKnifesObjects}

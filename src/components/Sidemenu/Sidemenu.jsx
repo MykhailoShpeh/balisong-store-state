@@ -11,7 +11,6 @@ export function Sidemenu({
     return (
         <div className={css.sideMenuDiv}>
          {/* <> */}
-            <h2 className={css.title} id="sideMenuTitle">Фільтри для пошуку ножів</h2>
             <button
                 type="button"
                 className={css.toggleButton}

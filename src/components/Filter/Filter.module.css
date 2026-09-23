@@ -5,12 +5,14 @@
     position: fixed;
     z-index: 3;
     /* background: rgba(245, 245, 247, .8); */
-           background: rgba(217, 217, 217, 0.8);
-     backdrop-filter: blur(10px);
+    background: rgba(217, 217, 217, 0.8);
+    border-bottom: 1px solid rgb(94, 94, 94);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
+
 }
 
 .buttonFiltration {
@@ -47,4 +49,58 @@
 
 .active {
     outline: 1px #aee8fa solid;
+}
+
+/* Кнопка для відкриття меню користувача */
+.UserButton {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.UserButton:hover {
+    cursor: pointer;
+}
+
+.UserMenu {
+    position: absolute;
+    top: 55px;
+    right: 80px;
+
+    width: 220px;
+    height: 120px;
+    padding: 8px;
+
+    display: none;
+    flex-direction: column;
+
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.UserMenu button {
+    width: 100%;
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.UserButton:hover+.UserMenu {
+    display: flex;
+}
+
+.UserMenu:hover {
+    display: flex;
 }
