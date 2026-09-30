@@ -93,7 +93,7 @@ export function Balisong({
                     : `${css.cardButton}`
             }
             disabled={
-                // additionalPhotos[0] === template ||
+                additionalPhotos[0] === template ||
                  !activeUser
                 }
             type='button'

@@ -22,6 +22,12 @@
 .fullInfoTitle {
     cursor: pointer;
     border: 1px solid #5C7A67;
+     transition: all 0.3s ease;
+}
+
+.fullInfoTitle:hover {
+ border-color: #C4D0C7;
+ transform: translateY(-2px);
 }
 
 .fullInfoDiv {
@@ -44,6 +50,13 @@
 .cardButton {
     /* background-color: #da4397; */
         background-color: #5C7A67;
+         transition: all 0.3s ease;
+}
+
+.cardButton:hover {
+    background-color: #C4D0C7;
+    transform: translateY(-2px);
+    border: #5C7A67 1px solid;
 }
 
 .noInStock {
