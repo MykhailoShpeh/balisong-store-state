@@ -35,48 +35,37 @@ import debounce from "lodash.debounce";
 import css from './App.module.css';
 
 // //! Сортування, в якому моделі, яких немає в наявності знаходяться в кінці списку
-// console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 const arrayYes = balisongs.filter(item => item.photos);
-
 const arrayNo = balisongs.filter(item => !item.photos);
-
-// console.log("arrayYes: ", arrayYes);
-// console.log("arrayNo: ", arrayNo);
-
 // balisongs.splice(0, balisongs.length);
 balisongs.length = 0;
-
 balisongs.push(...arrayYes, ...arrayNo)
-
-// console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 
 export class App extends Component {
 
   state = {
-    // isSafeBlade: false,
-    // isLiveBlade: false
-    balisongsArray: balisongs,
-    title: 'Колекція балісонгів',
-    //! Властивості для кошика
-    activeButton: "allButton",
+    balisongsArray: balisongs, //
+    title: 'Колекція балісонгів', //
+    activeButton: "allButton", //
     selectedKnifesIndxs: JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || [], //! масив індексів обраних ножів
     selectedKnifesObjects: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)), //! //! масив обраних моделей
-    isCartButton: false,
+    isCartButton: false, //
     selectedKnifesObjectsAfterFiltration: (JSON.parse(localStorage.getItem("selectedKnifesIndxs")) || []).flatMap((item) => balisongs.filter((el) => item === el.id)),
-    balisongsArrayAfterFiltration: balisongs,
+    balisongsArrayAfterFiltration: balisongs, //
     searchInputValue: "", //! значення пошукового інпуту
     radioButtonValue: "name", //! значення параметра для пошуку/фільтрації радіо-кнопки
     inputSearchPlaceholder: "Введіть назву ножа", //! значення placeholder для inputSearch
-    balisongsmanufactor: balisongs,
+    balisongsmanufactor: balisongs, //
     onlyInputSearchValue: [], //! значення пошукового інпута
-    showModal: true,
-    modalType: "",
+    showModal: true, //
+    modalType: "", //
     users: JSON.parse(localStorage.getItem("users")) || [],
     activeUser: null, //! 🗣 активний (авторизований) користувач
     activeUserId: null, //! #️⃣🗣 індекс Активного (авторизованого) користувача 
   }
 
+  //!  метод, який відбувається зразу після монтування
   componentDidMount() {
     let users = JSON.parse(localStorage.getItem("users"))
     let activeUser = null;
@@ -562,6 +551,7 @@ export class App extends Component {
             onSignOut={this.handleSignOut}
           />
         </Filter>
+
         <Section
           title={this.state.title}
           selectedKnifesObjects={selectedKnifesObjects}
@@ -589,7 +579,7 @@ export class App extends Component {
             activeUser={activeUser}
           />
         </Section>
-        <Footer />
+        <Footer/>
       </>
     )
   }

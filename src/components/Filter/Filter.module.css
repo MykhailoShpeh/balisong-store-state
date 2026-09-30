@@ -4,27 +4,25 @@
     top: 0;
     position: fixed;
     z-index: 3;
-    /* background: rgba(245, 245, 247, .8); */
     background: rgba(217, 217, 217, 0.8);
-    border-bottom: 1px solid rgb(94, 94, 94);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-
+.divButton {
+    display: flex;
 }
 
 .buttonFiltration {
     width: 250px;
     margin-right: 20px;
     padding: 12px 16px;
-    /* border: 1px solid rgba(100, 190, 255, 0.3);
-    background: #505050; */
-    /* background: rgba(22, 119, 172); */
     color: rgba(0, 0, 0, .8);
     background: transparent;
-    border: 1px rgba(0, 0, 0, .8) solid;
+    border: none;
+    /* border: 1px rgba(0, 0, 0, .8) solid; */
     /* color: #e2f7ff; */
     cursor: pointer;
     transition: all 0.3s ease;
@@ -32,9 +30,7 @@
 
 /* hover ефект */
 .buttonFiltration:hover {
-    border-color: #64efff;
-    box-shadow: 0 0 10px rgba(100, 219, 255, 0.5),
-        0 0 25px rgba(100, 255, 237, 0.3);
+    color: #6F927C;
     transform: translateY(-2px);
 }
 
@@ -44,11 +40,22 @@
 }
 
 .buttonFiltration:focus {
-    outline: 1px #82d7f1 solid;
+    outline: none;
 }
 
 .active {
-    outline: 1px #aee8fa solid;
+    position: relative;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: #5C7A67;
+  border-radius: 2px;
 }
 
 /* Кнопка для відкриття меню користувача */
@@ -64,10 +71,15 @@
     cursor: pointer;
 }
 
+.box {
+    position: relative;
+    display: flex;
+}
+
 .UserMenu {
     position: absolute;
-    top: 55px;
-    right: 80px;
+    top: 15px;
+    right: -100px;
 
     width: 220px;
     height: 120px;
@@ -97,7 +109,7 @@
     transition: 0.2s ease;
 }
 
-.UserButton:hover+.UserMenu {
+.UserButton:hover+.box .UserMenu {
     display: flex;
 }
 
