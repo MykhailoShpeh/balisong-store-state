@@ -44,7 +44,7 @@ export function Balisong({
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
     //  console.log("🇩🇪activeUser :", activeUser)
-     console.log("selectedKnifesIndxs :", selectedKnifesIndxs)
+    console.log("selectedKnifesIndxs :", selectedKnifesIndxs)
 
 
 
@@ -52,7 +52,34 @@ export function Balisong({
 
 
     return <>
-        <h2 className={css.title}>  {nameOfKnife}</h2>
+
+
+        <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
+        <p className={`$${css.text} ${css.brand}`}>{brand}</p>
+        <p className={`$${css.text} ${css.type}`}>{typeOfKnife}</p>
+        <h3 className={css.title}>  {nameOfKnife}</h3>
+        <p className={`$${css.text} ${css.price}`}>${price} <span className={css.usd}>USD</span></p>
+        <button
+            type='button'
+            className={css.fullInfoTitle}
+            onClick={(event) => {
+                event.currentTarget.nextElementSibling.classList.toggle(css.active)
+                setIsOpen(prev => !prev)
+            }}
+        >
+            {isOpen ? "Згорнута інформація" : "Повна інформація"}
+        </button>
+        <div className={css.fullInfoDiv}>
+            <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
+            <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
+            <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
+            <Modal
+                images={additionalPhotos}
+                name={nameOfKnife}
+            />
+        </div>
+
+        {/* <h2 className={css.title}>  {nameOfKnife}</h2>
         <a target='_blank' rel="noopener noreferrer" href={link}><img className={css.image} src={image} alt={nameOfKnife} /></a>
         <button
             type='button'
@@ -69,22 +96,11 @@ export function Balisong({
             <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
             <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
             <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
-
-            {/* <div className={css.divImg}>
-            {additionalPhotos.map(item =>
-                <img
-                    src={item}
-                    alt={nameOfKnife}
-                    className={css.img}
-                />
-            )}
-        </div> */}
-
             <Modal
                 images={additionalPhotos}
                 name={nameOfKnife}
             />
-        </div>
+        </div> */}
         <button
             className={additionalPhotos[0] === template
                 ? `${css.noInStock} ${css.cardButton} `

@@ -1,8 +1,7 @@
 .image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-    /* margin: 12px auto; */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
     transition: all 0.25s ease;
     border-radius: 4px;
 }
@@ -20,22 +19,26 @@
 }
 
 .fullInfoTitle {
+    width: 140px;
     cursor: pointer;
     border: 1px solid #5C7A67;
-     transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .fullInfoTitle:hover {
- border-color: #C4D0C7;
- transform: translateY(-2px);
+    border-color: #C4D0C7;
+    transform: translateY(-2px);
 }
 
 .fullInfoDiv {
+    width: 320px;
     position: absolute;
-    top: 445px;
+    top: 490px;
+    left: 0;
     display: none;
     z-index: 1000;
-    background-color: #2f2f34;
+    /* background-color: #2f2f34; */
+    background-color: #c8cec9;
     border-radius: 4px;
 }
 
@@ -48,13 +51,19 @@
 }
 
 .cardButton {
+    width: 140px;
+    position: absolute;
+    top: 423px;
+    right: 15px;
     /* background-color: #da4397; */
-        background-color: #5C7A67;
-         transition: all 0.3s ease;
+    color: #ebefec;
+    background-color: #5C7A67;
+    transition: all 0.3s ease;
 }
 
 .cardButton:hover {
-    background-color: #C4D0C7;
+    color: #111814;
+    background-color: #9fb9a5;
     transform: translateY(-2px);
     border: #5C7A67 1px solid;
 }
@@ -64,9 +73,39 @@
 }
 
 .deleteFromCart {
-    background-color: #7bd3a0;
+    background-color: #599b75;
 }
 
 .cardButton:disabled {
     background-color: gray;
+}
+
+
+/*? Нові стилі */
+.brand {
+    width: 150px;
+    text-align: start;
+    color: #3f5647;
+}
+
+.type {
+    width: 100px;
+    position: absolute;
+    top: 240px;
+    right: 15px;
+    border-radius: 9px;
+    background: #c8cec9;
+}
+
+.title {
+    text-align: start;
+}
+
+.price {
+    text-align: start;
+    font-weight: 700;
+}
+
+.usd {
+    font-weight: 400;
 }
