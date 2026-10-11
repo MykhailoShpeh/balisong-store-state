@@ -25,7 +25,7 @@ export class ListSorter extends Component {
                 ? [...balisongs].sort((a, b) => b.price - a.price)
                 : value === "cheap"
                     ? [...balisongs].sort((a, b) => a.price - b.price)
-                    : 
+                    : balisongs
 
                     console.log("knifes: ", knifes)
 
