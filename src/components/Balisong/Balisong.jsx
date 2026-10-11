@@ -44,7 +44,7 @@ export function Balisong({
     // console.log("selectedKnifesObjects: ", selectedKnifesObjects);
     // console.log("id :", id)
     //  console.log("🇩🇪activeUser :", activeUser)
-    console.log("selectedKnifesIndxs :", selectedKnifesIndxs)
+    // console.log("selectedKnifesIndxs :", selectedKnifesIndxs)
 
 
 

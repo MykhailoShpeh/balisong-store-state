@@ -1,0 +1,24 @@
+.optionsDiv {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+.optionsSelect {
+    width: 220px;
+    height: 44px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(26, 31, 37);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0px 38px 0px 13px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(213, 217, 224);
+    border-image: none;
+    border-radius: 9px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}

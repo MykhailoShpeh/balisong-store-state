@@ -30,6 +30,8 @@ import { Sidemenu } from '@/components/Sidemenu/Sidemenu.jsx';
 
 import { Footer } from '@/components/Footer/Footer.jsx';
 
+import { ListSorter } from '@/components/ListSorter/ListSorter.jsx'
+
 import debounce from "lodash.debounce";
 
 import css from './App.module.css';
@@ -468,6 +470,17 @@ export class App extends Component {
     })
   }
 
+  handleChangeSortSelect = knifes => {
+    let result = [];
+    result = knifes;
+
+    this.setState({
+      balisongsArray: result,
+      balisongsArrayAfterFiltration: result,
+      searchInputValue: ""
+    })
+  }
+
   render() {
 
     const {
@@ -577,9 +590,12 @@ export class App extends Component {
             selectedKnifesIndxs={selectedKnifesIndxs}
             totalTypes={totalTypes}
             activeUser={activeUser}
-          />
+
+          >
+            <ListSorter handleSort={this.handleChangeSortSelect} />
+          </BalisongList>
         </Section>
-        <Footer/>
+        <Footer />
       </>
     )
   }
