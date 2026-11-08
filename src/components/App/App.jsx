@@ -43,7 +43,6 @@ const arrayNo = balisongs.filter(item => !item.photos);
 balisongs.length = 0;
 balisongs.push(...arrayYes, ...arrayNo)
 
-
 export class App extends Component {
 
   state = {

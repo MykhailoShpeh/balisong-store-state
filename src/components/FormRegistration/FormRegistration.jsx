@@ -29,6 +29,20 @@ export class FormRegistration extends Component {
         const { loginInputValue, passwordInputValue, userName, userEmail, userPassword, userExperience, userAge, isActive = false, selectedKnifesIndxs = [] } = this.state;
         console.log(`Login: ${loginInputValue}, Password: ${passwordInputValue}`);
         // this.props.onSubmit({ ...this.state });
+
+        //todo отримати масив коритсувачів з localStorage, звірити заповнену інформацію з наявними користувачами,
+        //todo якщо користувач з такою е. адресою існує, потрібно відмінити створення нового корисутвача
+
+        const users = JSON.parse(localStorage.getItem("users"))
+        //! змінна з boolean значеннм для умови
+        const isEmailNotUnique = users.some(user => user.userEmail === userEmail)
+        console.log("📩Такий Email є в db?:", isEmailNotUnique);
+        if (isEmailNotUnique) {
+            alert(`Користувач з таким E-mail: ${userEmail} вже існує`);
+            console.log(`Користувач з таким E-mail: ${userEmail} вже існує`);
+            return
+        }
+
         this.props.onSubmit({
             userName,
             userEmail,

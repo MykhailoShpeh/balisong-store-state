@@ -19,7 +19,6 @@
 }
 
 .fullInfoTitle {
-    /* width: 140px; */
     margin-bottom: 10px;
     cursor: pointer;
     border: 1px solid #5C7A67;
@@ -52,10 +51,6 @@
 }
 
 .cardButton {
-    /* width: 140px; */
-    /* position: absolute;
-    top: 423px;
-    right: 15px; */
     /* background-color: #da4397; */
     color: #ebefec;
     background-color: #5C7A67;

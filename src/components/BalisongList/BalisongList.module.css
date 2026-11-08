@@ -12,6 +12,7 @@
     justify-content: center;
     gap: 24px;
     /* background: rgba(245, 245, 247, .8); */
+
     list-style: none;
     padding: 0;
     padding-top: 80px;
@@ -19,30 +20,24 @@
 }
 
 .optionsDiv {
-position: absolute;
-top: 5px;
-right: 15px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
 }
 
 .optionsSelect {
     width: 220px;
     height: 44px;
-
     padding: 0 38px 0 13px;
-
     border: 1px solid #d5d9e0;
     border-radius: 9px;
-
     background-color: #ffffff;
     color: #1a1f25;
-
     font-family: inherit;
     font-size: 14px;
     font-weight: 500;
-
     cursor: pointer;
     outline: none;
-
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease,
@@ -68,25 +63,17 @@ right: 15px;
 
 .card {
     max-width: 480px;
-    /* width: 100%; */
     /* background: #252525; */
-    background: #fefefe;
-    /* color: #e1e0e0; */
+    background: #cccccc62;
     color: rgba(0, 0, 0, .8);
     position: relative;
-    /* border: 1px solid rgba(202, 60, 155, 0.35); */
     /* border: 1px solid #252525; */
-        border: 1px solid #f2f2f2;
+    border: 1px solid #f2f2f2;
     border-radius: 4px;
-
     padding: 15px;
     text-align: center;
-
     display: flex;
     flex-direction: column;
-    /* display: grid;
-    gap: 15px; */
-
     transition: all 0.25s ease;
 }
 
@@ -94,7 +81,7 @@ right: 15px;
     width: 100%;
     height: 220px;
     object-fit: contain;
-    background: #1c1c20;
+    background: #a4a4a4;
     border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
@@ -102,7 +89,6 @@ right: 15px;
 
 .card button {
     margin-top: auto;
-    /* притискає кнопки до низу */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -110,8 +96,6 @@ right: 15px;
 
 .card:hover {
     transform: scale(1.03);
-    /* border: #7D8CC4 1px solid; */
     border: #4f6d57 1px solid;
-    
     z-index: 1;
 }

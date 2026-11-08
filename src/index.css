@@ -16,16 +16,43 @@
   /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
   /* #2E2C2C */
-  /* background-color: #151515; */
-background-color: #ffffff;
+  /* background-color: rgb(38, 38, 38); */
+  background-color: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-    padding-top: 60px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  padding-top: 60px;
+
+/*? стилі для світлої теми */
+  --bg-color: rgba(217, 217, 217, 0.8);
+  --card-color: #cccccc62;
+  --button-color: #5C7A67;
+  --active-button: #599b75;
+  --text-color: rgba(0, 0, 0, .8);
+  --secondary-text: #3f5647;
+  --light-text: #ebefec;
+  --border-color: ;
+  --hover-outline: #4f6d57;
+  --hover-text: #6F927C;
+  --hover-background: #9fb9a5;
+}
+
+[data-theme="dark"] {
+  --bg-color: rgba(217, 217, 217, 0.8);
+  --card-color: #cccccc62;
+  --button-color: #5C7A67;
+  --active-button: #599b75;
+  --text-color: rgba(0, 0, 0, .8);
+  --secondary-text: #3f5647;
+  --light-text: #ebefec;
+  --border-color: ;
+  --hover-outline: #4f6d57;
+  --hover-text: #6F927C;
+  --hover-background: #9fb9a5;
 }
 
 a {
@@ -33,9 +60,10 @@ a {
   color: #bec0ef;
   text-decoration: inherit;
 }
-a:hover {
+
+/* a:hover {
   color: #5f64b9;
-}
+} */
 
 body {
   margin: 0;
@@ -59,16 +87,17 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+
+/* button:hover {
   border-color: #646cff;
-}
+} */
 button:focus,
 button:focus-visible {
   outline: none;
   /* outline: 4px auto -webkit-focus-ring-color; */
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -79,7 +108,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 ul {
   list-style: none;
