@@ -480,6 +480,14 @@ export class App extends Component {
     })
   }
 
+  setFilteredProducts = filtered => {
+    console.log("відфільтровані ножі ‼️")
+    this.setState({
+      balisongsArray: filtered,
+      balisongsArrayAfterFiltration: filtered
+    })
+  }
+
   render() {
 
     const {
@@ -581,7 +589,10 @@ export class App extends Component {
               inputSearchPlaceholder={inputSearchPlaceholder}
             />
           }
-          priceFilter={<PriceFilter />}
+          priceFilter={<PriceFilter 
+            balisongs={balisongsArrayAfterFiltration}
+            onFilteredProducts={this.setFilteredProducts}
+            />}
         >
           <BalisongList
             items={isCartButton ? selectedKnifesObjects : balisongsArray}
