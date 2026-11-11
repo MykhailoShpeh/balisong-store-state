@@ -64,6 +64,7 @@ export class App extends Component {
     users: JSON.parse(localStorage.getItem("users")) || [],
     activeUser: null, //! 🗣 активний (авторизований) користувач
     activeUserId: null, //! #️⃣🗣 індекс Активного (авторизованого) користувача 
+    theme: "light", //* значення теми сайту
   }
 
   //!  метод, який відбувається зразу після монтування
@@ -488,6 +489,14 @@ export class App extends Component {
     })
   }
 
+  //! функція для зміни теми
+  toggleTheme = () => {
+    console.log("Тема змінилася 🌚")
+    this.setState(prevState => ({
+      theme: prevState.theme === "light" ? "dark" : "light",
+    }));
+  };
+
   render() {
 
     const {
@@ -504,7 +513,8 @@ export class App extends Component {
       onlyInputSearchValue,
       showModal,
       modalType,
-      activeUser
+      activeUser, 
+      theme
     } = this.state; //! деструктуризація, замість this.state.expample пишемо examp;e
 
     //! Рахуємо загальну кількість моделей <totalModels> виходячи з наявності фактичної ціни
@@ -564,6 +574,8 @@ export class App extends Component {
           onCart={this.cartFiltration}
           selectedLength={selectedKnifesIndxs.length}
           activeButton={activeButton}
+          theme={theme}
+          onToggleTheme={this.toggleTheme}
         >
           <UserLogInOrReg
             onClose={this.toggleModal}

@@ -6,7 +6,7 @@ export function PriceFilter(
     onFilteredProducts}
 ) {
 
-    console.log("👻balisongs: ", balisongs)
+    // console.log("👻balisongs: ", balisongs)
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
 

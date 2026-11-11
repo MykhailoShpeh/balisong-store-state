@@ -7,7 +7,9 @@ export function Filter({
     onCart,
     selectedLength,
     activeButton,
-    children
+    children,
+    theme,
+    onToggleTheme
 }) {
     return (
         <div
@@ -59,6 +61,11 @@ export function Filter({
             <div className={css.UserMenu}>
                 {children}
             </div>
+            </div>
+            <div data-theme={theme}>
+            <button className={css.themeButton} onClick={onToggleTheme}>
+                {theme === "light" ? "Темна" : "Світла"}
+                </button>
             </div>
         </div>
     )

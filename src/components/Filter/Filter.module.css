@@ -74,6 +74,7 @@
 .box {
     position: relative;
     display: flex;
+    margin-right: 20px;
 }
 
 .UserMenu {
@@ -109,4 +110,8 @@
 
 .UserMenu:hover {
     display: flex;
+}
+
+.themeButton {
+    cursor: pointer;
 }
