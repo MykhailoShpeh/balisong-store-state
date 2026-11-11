@@ -549,6 +549,7 @@ export class App extends Component {
 
     return (
       <>
+      <div data-theme={theme}>
         {
           showModal &&
           <ModalRegistrationIdentification
@@ -618,6 +619,7 @@ export class App extends Component {
           </BalisongList>
         </Section>
         <Footer />
+        </div>
       </>
     )
   }

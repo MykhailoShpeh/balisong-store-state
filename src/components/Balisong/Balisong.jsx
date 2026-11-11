@@ -72,7 +72,7 @@ export function Balisong({
         <div className={css.fullInfoDiv}>
             <p className={css.text}><FiLayers size={iconSize.sm} />Матеріали: {materials}</p>
             <p className={css.text}><FaWeightHanging size={iconSize.sm} />Вага: {weight}</p>
-            <p><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
+            <p className={css.text}><FiTool size={iconSize.sm} /> Аксесуари: {accessories}</p>
             <Modal
                 images={additionalPhotos}
                 name={nameOfKnife}

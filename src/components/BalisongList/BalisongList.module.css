@@ -31,7 +31,8 @@
     padding: 0 38px 0 13px;
     border: 1px solid #d5d9e0;
     border-radius: 9px;
-    background-color: #ffffff;
+    background-color: var(--select-color);
+
     color: #1a1f25;
     font-family: inherit;
     font-size: 14px;
@@ -64,11 +65,11 @@
 .card {
     max-width: 480px;
     /* background: #252525; */
-    background: #cccccc62;
+    background: var(--card-color);
     color: rgba(0, 0, 0, .8);
     position: relative;
     /* border: 1px solid #252525; */
-    border: 1px solid #f2f2f2;
+    border: 1px solid var(--sections-color);
     border-radius: 4px;
     padding: 15px;
     text-align: center;

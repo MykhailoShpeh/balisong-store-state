@@ -17,7 +17,7 @@
   color: rgba(255, 255, 255, 0.87);
   /* #2E2C2C */
   /* background-color: rgb(38, 38, 38); */
-  background-color: #ffffff;
+  background-color: var(--bg-color);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,11 +27,16 @@
   text-align: center;
   padding-top: 60px;
 
-/*? стилі для світлої теми */
+  /*? стилі для світлої теми */
   --bg-color: rgba(217, 217, 217, 0.8);
+  --header-color: rgba(217, 217, 217, 0.8);
+  --sections-color: white;
   --card-color: #cccccc62;
   --button-color: #5C7A67;
+  --buy-color: #5C7A67;
+  --delete-color: #599b75;
   --active-button: #599b75;
+  --title-color: #2c3d2feb;
   --text-color: rgba(0, 0, 0, .8);
   --secondary-text: #3f5647;
   --light-text: #ebefec;
@@ -39,20 +44,31 @@
   --hover-outline: #4f6d57;
   --hover-text: #6F927C;
   --hover-background: #9fb9a5;
+  --info-color: #c8cec9;
+  --info-button: white;
+  --select-color: white; 
 }
 
 [data-theme="dark"] {
-  --bg-color: rgba(217, 217, 217, 0.8);
-  --card-color: #cccccc62;
-  --button-color: #5C7A67;
+  --bg-color: rgb(38, 38, 38);
+  --header-color: rgba(109, 109, 109, 0.8);
+  --sections-color: rgba(64, 64, 64, 0.8);
+  --card-color: #252525;
+  --button-color: #9cc0a9;
+  --buy-color: #da4397;
+  --delete-color: #672148;
   --active-button: #599b75;
-  --text-color: rgba(0, 0, 0, .8);
-  --secondary-text: #3f5647;
+  --title-color: #ebf2edeb;
+  --text-color: #ebefec;
+  --secondary-text: #c6d8cd;
   --light-text: #ebefec;
   --border-color: ;
   --hover-outline: #4f6d57;
-  --hover-text: #6F927C;
+  --hover-text: #c5ecd9;
   --hover-background: #9fb9a5;
+  --info-color: #2f2f34;
+    --info-button: lightblue;
+--select-color: gray; 
 }
 
 a {
